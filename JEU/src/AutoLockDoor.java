@@ -1,58 +1,44 @@
 public class AutoLockDoor extends Exit {
 
+	private boolean locked;
+	private int key;
 
-    private boolean locked;
+	/**
+	 * 
+	 * @param locked
+	 * @param key
+	 */
+	public AutoLockDoor(int locked, int key) {
+		// TODO - implement AutoLockDoor.AutoLockDoor
+		throw new UnsupportedOperationException();
+	}
 
+	public void open() {
+		// TODO - implement AutoLockDoor.open
+		throw new UnsupportedOperationException();
+	}
 
+	public void close() {
+		// TODO - implement AutoLockDoor.close
+		throw new UnsupportedOperationException();
+	}
 
+	/**
+	 * 
+	 * @param key
+	 */
+	public void lock(int key) {
+		// TODO - implement AutoLockDoor.lock
+		throw new UnsupportedOperationException();
+	}
 
-
-    public void lock(){
-        if(!this.isState()){
-            this.locked = true;
-        }else{
-            System.out.println("Attention tu ne peux pas la vérouiller, ta porte est ouverte");
-        }
-    }
-
-
-    public void unlock(){
-        if(!this.isState()){
-            this.locked = false;
-        }else{
-            System.out.println("Attention ta porte est ouverte !");
-        }
-    }
-
-    @Override
-    public void open() {
-        super.open();
-        unlock();
-
-    }
-
-    @Override
-    public void close() {
-        super.close();
-        //lock();
-    }
-    @Override
-    public String toString() {
-        StringBuffer sb = new StringBuffer();
-        sb.append("Name class: " + getClass().getSimpleName()+"\n");
-        sb.append("Etat de la porte: " + super.isState()+"\n");
-        sb.append("Etat du verou: " + this.locked+"\n");
-        return sb.toString();
-    }
-
-
-
-    public boolean isLocked() {
-        return locked;
-    }
-
-    public void setLocked(boolean locked) {
-        this.locked = locked;
-    }
+	/**
+	 * 
+	 * @param key
+	 */
+	public void unLock(int key) {
+		// TODO - implement AutoLockDoor.unLock
+		throw new UnsupportedOperationException();
+	}
 
 }

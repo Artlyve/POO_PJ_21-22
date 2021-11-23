@@ -1,2 +1,2 @@
-public class Neutral extends Npc {
+public abstract class Neutral extends Npc {
 }

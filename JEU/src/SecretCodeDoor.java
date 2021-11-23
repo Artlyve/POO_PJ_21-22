@@ -1,34 +1,19 @@
-import java.util.Scanner;
-
 public class SecretCodeDoor extends AutoLockDoor {
 
-    private final int DEF_CODE = 1234;
-    private int code;
+	private final int DEFAULT_CODE;
 
+	/**
+	 * 
+	 * @param code
+	 */
+	public SecretCodeDoor(int code) {
+		// TODO - implement SecretCodeDoor.SecretCodeDoor
+		throw new UnsupportedOperationException();
+	}
 
-    public SecretCodeDoor(){
-        this.code = DEF_CODE;
-    }
+	public void unlock() {
+		// TODO - implement SecretCodeDoor.unlock
+		throw new UnsupportedOperationException();
+	}
 
-    @Override
-    public void unlock() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Entrer votre code");
-        int codeEnter = sc.nextInt();
-        if(codeEnter == this.code){
-            super.setState(true);
-            super.setLocked(true);
-        }else{
-            super.close();
-            System.out.println("Code non valide");
-        }
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
 }

@@ -1,2 +1,2 @@
-public class Npc extends Unit {
+public abstract class Npc extends Unit {
 }
