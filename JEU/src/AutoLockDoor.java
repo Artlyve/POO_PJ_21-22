@@ -1,44 +1,48 @@
 public class AutoLockDoor extends Exit {
 
 	private boolean locked;
-	private int key;
+	private Key myKey;
 
-	/**
-	 * 
-	 * @param locked
-	 * @param key
-	 */
-	public AutoLockDoor(int locked, int key) {
-		// TODO - implement AutoLockDoor.AutoLockDoor
-		throw new UnsupportedOperationException();
+
+	public AutoLockDoor(Key key) {
+		super();
+		this.myKey = key;
+
 	}
 
-	public void open() {
-		// TODO - implement AutoLockDoor.open
-		throw new UnsupportedOperationException();
+	public void open(Key k) {
+		super.open();
+		unLock(k);
 	}
 
-	public void close() {
-		// TODO - implement AutoLockDoor.close
-		throw new UnsupportedOperationException();
+	public void close(Key k) {
+		super.close();
+		lock(k);
 	}
 
-	/**
-	 * 
-	 * @param key
-	 */
-	public void lock(int key) {
-		// TODO - implement AutoLockDoor.lock
-		throw new UnsupportedOperationException();
+
+	public void lock(Key k) {
+		if(!this.isState() && k == this.myKey){
+			this.locked = true;
+		}else{
+			System.out.println("Attention tu ne peux pas la vérouiller, ta porte est ouverte");
+		}
 	}
 
-	/**
-	 * 
-	 * @param key
-	 */
-	public void unLock(int key) {
-		// TODO - implement AutoLockDoor.unLock
-		throw new UnsupportedOperationException();
+
+	public void unLock(Key k) {
+		if(!this.isState() && k == this.myKey){
+			this.locked = false;
+		}else{
+			System.out.println("Attention ta porte est ouverte !");
+		}
 	}
 
+	public boolean isLocked() {
+		return locked;
+	}
+
+	public void setLocked(boolean locked) {
+		this.locked = locked;
+	}
 }

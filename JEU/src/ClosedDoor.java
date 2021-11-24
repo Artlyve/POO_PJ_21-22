@@ -1,13 +1,12 @@
 public class ClosedDoor extends Exit {
 
+	@Override
 	public void open() {
-		// TODO - implement ClosedDoor.open
-		throw new UnsupportedOperationException();
+		System.out.println("Impossible d'ouvrir cette porte !");
 	}
 
-	public ClosedDoor() {
-		// TODO - implement ClosedDoor.ClosedDoor
-		throw new UnsupportedOperationException();
+	public ClosedDoor(){
+		super.close();
 	}
 
 }

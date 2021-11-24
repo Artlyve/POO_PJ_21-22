@@ -1,18 +1,20 @@
-public class Item implements Printable {
+public abstract class Item implements Printable {
 
-	private final int value;
-	private final String name;
-	private final String description;
 
-	/**
-	 * 
-	 * @param value
-	 * @param name
-	 * @param description
-	 */
-	public Item(int value, int name, int description) {
-		// TODO - implement Item.Item
-		throw new UnsupportedOperationException();
+
+	private IdentityItem id;
+
+
+	@Override
+	public void print() {
+
+	}
+	public IdentityItem getId() {
+		return id;
+	}
+
+	public void setId(IdentityItem id) {
+		this.id = id;
 	}
 
 }

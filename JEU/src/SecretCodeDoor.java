@@ -1,4 +1,6 @@
-public class SecretCodeDoor extends AutoLockDoor {
+import java.util.Scanner;
+
+public class SecretCodeDoor extends Exit {
 
 	private final int DEFAULT_CODE;
 
@@ -7,13 +9,24 @@ public class SecretCodeDoor extends AutoLockDoor {
 	 * @param code
 	 */
 	public SecretCodeDoor(int code) {
-		// TODO - implement SecretCodeDoor.SecretCodeDoor
-		throw new UnsupportedOperationException();
+		super();
+		this.DEFAULT_CODE = code;
+
 	}
 
-	public void unlock() {
-		// TODO - implement SecretCodeDoor.unlock
-		throw new UnsupportedOperationException();
+	@Override
+	public void open() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Entrer votre code");
+		int codeEnter = sc.nextInt();
+		if(codeEnter == this.DEFAULT_CODE){
+			super.setState(true);
+		}else{
+			super.close();
+			System.out.println("Code non valide");
+		}
+		sc.close();
 	}
+
 
 }

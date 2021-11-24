@@ -4,12 +4,12 @@ public class Interaction {
 	 * 
 	 * @param Place
 	 */
-	public void GO(int Place) {
+	public void go(int Place) {
 		// TODO - implement Interaction.GO
 		throw new UnsupportedOperationException();
 	}
 
-	public void HELP() {
+	public void help() {
 		// TODO - implement Interaction.HELP
 		throw new UnsupportedOperationException();
 	}
@@ -18,7 +18,7 @@ public class Interaction {
 	 * 
 	 * @param Place
 	 */
-	public void LOOK(int Place) {
+	public void look(int Place) {
 		// TODO - implement Interaction.LOOK
 		throw new UnsupportedOperationException();
 	}
@@ -27,12 +27,12 @@ public class Interaction {
 	 * 
 	 * @param Item
 	 */
-	public void TAKE(int Item) {
+	public void take(int Item) {
 		// TODO - implement Interaction.TAKE
 		throw new UnsupportedOperationException();
 	}
 
-	public void QUIT() {
+	public void quit() {
 		// TODO - implement Interaction.QUIT
 		throw new UnsupportedOperationException();
 	}
@@ -41,12 +41,12 @@ public class Interaction {
 	 * 
 	 * @param Items
 	 */
-	public void USE(int Items) {
+	public void use(int Items) {
 		// TODO - implement Interaction.USE
 		throw new UnsupportedOperationException();
 	}
 
-	public void GARDENER() {
+	public void gardener() {
 		// TODO - implement Interaction.GARDENER
 		throw new UnsupportedOperationException();
 	}

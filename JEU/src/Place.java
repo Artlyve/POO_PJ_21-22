@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Place implements Printable {
 
 	private final String NAME;
@@ -30,4 +32,8 @@ public class Place implements Printable {
 		throw new UnsupportedOperationException();
 	}
 
+	@Override
+	public void print() {
+
+	}
 }

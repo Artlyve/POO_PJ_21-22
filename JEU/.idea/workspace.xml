@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="" />
+    <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/IdentityItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Printable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AutoLockDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AutoLockDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClosedDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClosedDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MagicDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MagicDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SecretCodeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SecretCodeDoor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unit.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="21EbGjKEIv9LAKTbxlAu27bbsRq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
