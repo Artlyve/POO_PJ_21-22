@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../DIAGRAMME/.Diagramme Projet POO.vpp.lck" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_019d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_020d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -52,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637509102118</updated>
-      <workItem from="1637862522360" duration="2520000" />
+      <workItem from="1637862522360" duration="3116000" />
     </task>
     <servers />
   </component>
