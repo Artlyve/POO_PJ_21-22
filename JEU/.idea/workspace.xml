@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/.Diagramme Projet POO.vpp.lck" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_019d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_020d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_024d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DIAGRAMME/.Diagramme Projet POO.vpp.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -40,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TPs_BIS/TP3_BIS_POO" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637509102118</updated>
-      <workItem from="1637862522360" duration="3116000" />
+      <workItem from="1637862522360" duration="5728000" />
     </task>
     <servers />
   </component>
