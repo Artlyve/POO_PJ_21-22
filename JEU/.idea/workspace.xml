@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Candle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Candle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Flashlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flashlight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pierre_Salihi/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pierre_Salihi/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AzraelBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AzraelBlade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ColtSAA45.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ColtSAA45.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CosmicalRayBlaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CosmicalRayBlaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SilverBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SilverBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SilverDagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SilverDagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WoodStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WoodStaff.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
