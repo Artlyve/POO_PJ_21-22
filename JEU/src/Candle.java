@@ -3,10 +3,12 @@ public class Candle extends Item {
     public final static int DEFAULT_LEVEL = 4;
     private int level;
     private Lighter lighter = null;
+    private boolean usable;
 
     public Candle() {
         super();
-        this.level = Candle.DEFAULT_LEVEL;
+        this.level = DEFAULT_LEVEL;
+        this.usable = true;
     }
 
     public void use() {
@@ -16,7 +18,10 @@ public class Candle extends Item {
     }
 
     public boolean isEmpty() {
-        return this.level == 0;
+        if (this.level == 0) {
+            this.usable = false;
+        }
+        return usable;
     }
 
     public int getLevel() {
@@ -24,6 +29,10 @@ public class Candle extends Item {
     }
 
     public boolean light() {
-        return true;
+        if (!(this.isEmpty())) {
+          this.use();
+          return true;
+        }
+        return false;
     }
 }
