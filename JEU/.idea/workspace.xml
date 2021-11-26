@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp.bak_024d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIAGRAMME/.Diagramme Projet POO.vpp.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/../DIAGRAMME/Diagramme Projet POO.vpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Candle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Candle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Flashlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Flashlight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pierre_Salihi/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pierre_Salihi/README.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,8 @@
       <option name="presentableId" value="Default" />
       <updated>1637509102118</updated>
       <workItem from="1637862522360" duration="5728000" />
+      <workItem from="1637922791567" duration="371000" />
+      <workItem from="1637927291600" duration="5750000" />
     </task>
     <servers />
   </component>
@@ -70,6 +73,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

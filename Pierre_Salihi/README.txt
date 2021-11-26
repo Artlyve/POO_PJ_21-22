@@ -1,1 +1,1 @@
-		*** Installation & utilisation du programme : ***
+				*** Installation & utilisation du programme : ***
