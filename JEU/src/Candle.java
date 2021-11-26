@@ -18,7 +18,7 @@ public class Candle extends Item {
     public boolean isEmpty() {
         return this.level == 0;
     }
-    
+
     public int getLevel() {
         return this.level;
     }
