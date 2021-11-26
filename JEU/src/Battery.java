@@ -1,12 +1,13 @@
 public class Battery extends Item {
 
-    public final static int DEFAULT_LEVEL = 3;
+    public final static int DEFAULT_LEVEL = 4;
     private int level;
     private Flashlight flashlight = null;
+    private Lighter lighter = null;
 
     public Battery() {
         super();
-        this.level = Battery.DEFAULT_LEVEL;
+        this.level = DEFAULT_LEVEL;
     }
 
     public void freeFlashlight() {
@@ -43,6 +44,10 @@ public class Battery extends Item {
 
     Flashlight getFlashlight() {
         return this.flashlight;
+    }
+
+    Lighter getLighter() {
+        return this.lighter;
     }
 
     public int getLevel() {
