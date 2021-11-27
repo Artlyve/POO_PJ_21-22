@@ -5,48 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Item/Food.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Item/Sedative.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AutoLockDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/AutoLockDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AzraelBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/AzraelBlade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Battery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Candle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Candle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Class3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClosedDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/ClosedDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ColtSAA45.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/ColtSAA45.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CosmicalRayBlaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/CosmicalRayBlaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Devil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Devil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Door.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Flashlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Flashlight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gardener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IdentityItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/IdentityItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Lighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagicDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/MagicDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagicTablet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/MagicTablet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MagicTabletFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/MagicTabletFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Neutral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Neutral.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Npc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Printable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Printable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Rarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/t_enum/Rarity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SecretCodeDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/SecretCodeDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SilverBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SilverBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SilverDagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/SilverDagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Spectre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Talk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Talk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WoodStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/WoodStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Attack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/Weapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Devil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Devil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Spectre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unity/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Unit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

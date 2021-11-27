@@ -21,6 +21,13 @@ public abstract class Weapon extends Item {
 		}
 	}
 
+	public void use(){
+		if(this.getDurability() -1 ==0){
+			this.setUsable( false );
+		}else{
+			this.setDurability( this.getDurability()-1 );
+		}
+	}
 
 	public void setDamage(int damage) {
 		this.damage = damage;

@@ -8,4 +8,19 @@ public class Devil extends Enemy {
 	public void print() {
 
 	}
+
+	@Override
+	public <T extends Enemy> void AttackEnemy(T e) {
+
+	}
+
+	@Override
+	public void Talk() {
+
+	}
+
+	@Override
+	public void Attack(Enemy e) {
+
+	}
 }
