@@ -14,6 +14,7 @@ public abstract class Unit implements Attack, Printable {
 	private int Wallet;
 	private List<Item> ItemList;
 	private int Health;
+	private boolean dead;
 
 
 
@@ -49,4 +50,11 @@ public abstract class Unit implements Attack, Printable {
 		return MAX_HEALTH;
 	}
 
+	public boolean isDead() {
+		return dead;
+	}
+
+	public void setDead(boolean dead) {
+		this.dead = dead;
+	}
 }

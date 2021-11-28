@@ -1,10 +1,13 @@
 package Unity;
 
 import Item.Food;
+import Item.Item;
 import Item.Sedative;
 import Item.Weapons.Weapon;
 import Unity.Enemy.Enemy;
 import t_enum.Rarity;
+
+import java.util.List;
 
 public class Player extends Unit {
 
@@ -12,8 +15,15 @@ public class Player extends Unit {
 	private int mentalHealth;
 	private boolean attaked;
 
-	public Player(String name) {
-		NAME = name;
+	public Player(String name, List<Item> i, int w) {
+
+		this.NAME = name;
+		this.attaked = false;
+		this.mentalHealth = super.getMAX_HEALTH();
+		super.setDead( false );
+		super.setHealth( super.getMAX_HEALTH() );
+		super.setWallet( w );
+		super.setItemList( i );
 	}
 
 	@Override
@@ -86,13 +96,12 @@ public class Player extends Unit {
 		if(canAttak( e, w )){
 
 			if(e.getHealth()-w.getDamage() < 0){
-				e.dead();
+				e.dead(this);
 
 			}else {
 				e.setHealth( w.getDamage() );
 
 			}
-
 			w.use();
 			this.attaked = false;
 		}
