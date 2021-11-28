@@ -7,11 +7,9 @@ public class AutoLockDoor extends Exit {
 	private boolean locked;
 	private Key myKey;
 
-
 	public AutoLockDoor(Key key) {
 		super();
 		this.myKey = key;
-
 	}
 
 	public void open(Key k) {

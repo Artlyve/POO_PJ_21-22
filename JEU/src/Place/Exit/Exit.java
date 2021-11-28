@@ -6,7 +6,6 @@ public class Exit implements Printable {
 
 	protected boolean state;
 
-
 	public Exit() {
 		close();
 	}
