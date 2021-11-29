@@ -5,10 +5,14 @@ import Place.Exit.LockDoor;
 import Place.Exit.Exit;
 import Place.Exit.MagicDoor;
 import Place.Place;
+import Unity.Enemy.Devil;
+import Unity.Enemy.Spectre;
 import Unity.Player;
 import Item.MagicTablet;
 
 import Item.Key;
+
+import java.util.List;
 
 public class Interaction {
 
@@ -67,31 +71,50 @@ public class Interaction {
 	}
 
 
-	public void look(Place p) {
-		// TODO - implement Game.Interaction.LOOK
-		throw new UnsupportedOperationException();
+	public void look(List<Place> lp, Place p) {
+		System.out.println("Voici les ennemis qui rodent: ");
+		p.getUnitList().forEach( unit -> {
+			if(unit instanceof Spectre){
+				System.out.println("\t-" + ((Spectre) unit).getNAME());
+			}else if(unit instanceof Devil){
+				System.out.println("\t-" + ((Devil) unit).getNAME());
+			}
+		} );
+		System.out.println("Sortie disponible:");
+		lp.forEach( place -> {
+			if(place.isNeighbor(p)){
+				System.out.println("\t-"+place.getNAME());
+			}
+		} );
+		System.out.println("Objets se trouvant dans la pièce.");
+		p.getItemList().forEach( item -> {
+			System.out.println("\t-" + item.getId().getName() + ": " + item.getId().getDescription());
+		} );
+
+
+
 	}
 
 
-	public void take(Item p) {
-		// TODO - implement Game.Interaction.TAKE
-		throw new UnsupportedOperationException();
+	public void take(Player p, Item i, Place place) {
+		System.out.println("Vous ajoutez " + i.getId().getName() + " à votre liste d'objet");
+		p.getItemList().add( i );
+		place.getItemList().remove( i );
 	}
 
 	public void quit() {
-		// TODO - implement Game.Interaction.QUIT
-		throw new UnsupportedOperationException();
+		System.exit( 0 );
 	}
 
 
 	public void use(Item Items) {
-		// TODO - implement Game.Interaction.USE
-		throw new UnsupportedOperationException();
+
 	}
 
-	public void gardener() {
-		// TODO - implement Game.Interaction.GARDENER
-		throw new UnsupportedOperationException();
+	public void gardener(Place src, Place dest, Player p) {
+		System.out.println("Vous vous redirigez vers le jardinier.");
+		dest.getUnitList().add( p );
+		src.getUnitList().remove( p );
 	}
 
 }

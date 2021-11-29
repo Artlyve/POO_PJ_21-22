@@ -4,18 +4,20 @@ import Interface.Printable;
 
 public abstract class Item implements Printable {
 
-	private IdentityItem id;
+
+
+	private Identity id;
 
 
 	@Override
 	public void print() {
 
 	}
-	public IdentityItem getId() {
+	public Identity getId() {
 		return id;
 	}
 
-	public void setId(IdentityItem id) {
+	public void setId(Identity id) {
 		this.id = id;
 	}
 

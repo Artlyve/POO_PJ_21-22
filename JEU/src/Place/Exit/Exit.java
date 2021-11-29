@@ -1,12 +1,15 @@
 package Place.Exit;
 
 import Interface.Printable;
+import Item.Identity;
 
 public class Exit implements Printable {
 
 	protected boolean state;
 
+
 	public Exit() {
+
 		close();
 	}
 
@@ -30,4 +33,6 @@ public class Exit implements Printable {
 	public void setState(boolean state) {
 		this.state = state;
 	}
+
+
 }

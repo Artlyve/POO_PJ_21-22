@@ -1,5 +1,6 @@
 package Place.Exit;
 
+import Item.Identity;
 import Item.Key;
 
 public class LockDoor extends Exit {

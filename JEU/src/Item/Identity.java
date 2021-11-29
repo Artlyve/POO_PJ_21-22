@@ -1,12 +1,12 @@
 package Item;
 
-public class IdentityItem {
+public class Identity {
 
     private final int value;
     private final String name;
     private final String description;
 
-    public IdentityItem(int value, String name, String description) {
+    public Identity(int value, String name, String description) {
         this.value = value;
         this.name = name;
         this.description = description;
