@@ -6,12 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/Game/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Interaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Exit/AutoLockDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/LockDoor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Exit/ClosedDoor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Exit/MagicDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/MagicDoor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Exit/SecretCodeDoor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Place.java" afterDir="false" />
+=======
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +64,7 @@
       <workItem from="1637922791567" duration="371000" />
       <workItem from="1637927291600" duration="5750000" />
       <workItem from="1638022580467" duration="1020000" />
+      <workItem from="1638194176812" duration="1230000" />
     </task>
     <servers />
   </component>
