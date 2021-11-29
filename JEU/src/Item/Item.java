@@ -4,8 +4,6 @@ import Interface.Printable;
 
 public abstract class Item implements Printable {
 
-
-
 	private IdentityItem id;
 
 
