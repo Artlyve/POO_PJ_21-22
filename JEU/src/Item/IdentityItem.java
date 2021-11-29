@@ -1,6 +1,7 @@
 package Item;
 
 public class IdentityItem {
+
     private final int value;
     private final String name;
     private final String description;
@@ -23,4 +24,3 @@ public class IdentityItem {
         return description;
     }
 }
-

@@ -3,8 +3,7 @@ package Item;
 public class Lighter extends Item {
 
     private boolean isLight;
-    private Battery battery;
-    private Candle candle = null;
+    private final Battery battery;
 
     public Lighter() {
         super();
@@ -28,9 +27,5 @@ public class Lighter extends Item {
 
     Battery getBattery() {
         return battery;
-    }
-
-    Candle getCandle() {
-        return candle;
     }
 }
