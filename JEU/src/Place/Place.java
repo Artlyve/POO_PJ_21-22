@@ -3,9 +3,11 @@ package Place;
 import Place.Exit.Exit;
 import Interface.Printable;
 import Item.Item;
+import Unity.Player;
 import Unity.Unit;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class Place implements Printable {
 
@@ -13,34 +15,87 @@ public class Place implements Printable {
 	private List<Exit> ExitList;
 	private List<Item> ItemList;
 	private List<Unit> UnitList;
+	private boolean neighbor;
+	private boolean playerHere;
 
-	/**
-	 * 
-	 * @param NAME
-	 * @param ItemList
-	 * @param UnitList
-	 */
-	public Place(int NAME, int ItemList, int UnitList) {
-		// TODO - implement Place.Place.Place.Place
-		throw new UnsupportedOperationException();
+
+	public Place(String n, List<Item> i, List<Unit>  u, List<Exit> e) {
+		this.NAME = n;
+		this.ItemList = i;
+		this.UnitList = u;
+		this.ExitList = e;
+		this.neighbor = false;
+		this.playerHere = false;
 	}
 
-	/**
-	 * 
-	 * @param Place
-	 */
-	public boolean isNeighbor(int Place) {
-		// TODO - implement Place.Place.isNeighbor
-		throw new UnsupportedOperationException();
+
+	public boolean isNeighbor(Place p) {
+
+		this.neighbor = false;
+		this.ExitList.forEach( exit -> {
+			p.ExitList.forEach( exit1 -> {
+				if(exit == exit1){
+					this.neighbor = true;
+				}
+
+			} );
+		} );
+		return this.neighbor;
 	}
 
 	public boolean isPlayerHere() {
-		// TODO - implement Place.Place.isPlayerHere
-		throw new UnsupportedOperationException();
+		this.playerHere = false;
+		this.UnitList.forEach( unit -> {
+			if(unit instanceof Player){
+				this.playerHere = true;
+			}
+		} );
+
+		return this.playerHere;
 	}
 
 	@Override
 	public void print() {
 
+	}
+
+	public String getNAME() {
+		return NAME;
+	}
+
+	public List<Exit> getExitList() {
+		return ExitList;
+	}
+
+	public void setExitList(List<Exit> exitList) {
+		ExitList = exitList;
+	}
+
+	public List<Item> getItemList() {
+		return ItemList;
+	}
+
+	public void setItemList(List<Item> itemList) {
+		ItemList = itemList;
+	}
+
+	public List<Unit> getUnitList() {
+		return UnitList;
+	}
+
+	public void setUnitList(List<Unit> unitList) {
+		UnitList = unitList;
+	}
+
+	public boolean isNeighbor() {
+		return neighbor;
+	}
+
+	public void setNeighbor(boolean neighbor) {
+		this.neighbor = neighbor;
+	}
+
+	public void setPlayerHere(boolean playerHere) {
+		this.playerHere = playerHere;
 	}
 }

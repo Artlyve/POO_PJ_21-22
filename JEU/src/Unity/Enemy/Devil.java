@@ -14,7 +14,7 @@ public class Devil extends Enemy {
 	private final String NAME;
 
 
-	public Devil(String name, List<Item> i, int w, List<String> s, Rarity r){
+	public Devil(String name, List<Item> i, int w, List<String> s, Rarity r, int c){
 
 		this.NAME = name;
 
@@ -24,6 +24,7 @@ public class Devil extends Enemy {
 		super.setItemList( i );
 		super.setMyRarity( r );
 		super.setTalking( s );
+		super.setCc_attack( c );
 	}
 
 	@Override
