@@ -3,6 +3,8 @@ package Place;
 import Place.Exit.Exit;
 import Interface.Printable;
 import Item.Item;
+import Item.Lighter;
+import Item.Candle;
 import Unity.Player;
 import Unity.Unit;
 
@@ -17,17 +19,50 @@ public class Place implements Printable {
 	private List<Unit> UnitList;
 	private boolean neighbor;
 	private boolean playerHere;
+	private int lvlObscurity;
 
 
-	public Place(String n, List<Item> i, List<Unit>  u, List<Exit> e) {
+	public Place(String n, List<Item> i, List<Unit>  u, List<Exit> e, int o) {
 		this.NAME = n;
 		this.ItemList = i;
 		this.UnitList = u;
 		this.ExitList = e;
 		this.neighbor = false;
 		this.playerHere = false;
+		this.lvlObscurity = o;
 	}
 
+
+	public int checkObscurity(){
+		AtomicReference<Player> p = null;
+		this.getUnitList().forEach( unit -> {
+			if (unit instanceof Player){
+				p.set( (Player) unit );
+			}
+		} );
+		p.get().getItemList().forEach( item -> {
+			if(item instanceof Lighter){
+				if(((Lighter) item).getLight()){
+					this.lvlObscurity++;
+				}else{
+					this.lvlObscurity--;
+				}
+			}
+		} );
+
+		this.getItemList().forEach( item -> {
+			if(item instanceof Candle){
+				if(((Candle) item).isLight()){
+					this.lvlObscurity++;
+				}else{
+					this.lvlObscurity--;
+				}
+			}
+		} );
+
+
+		return this.lvlObscurity;
+	}
 
 	public boolean isNeighbor(Place p) {
 
@@ -111,5 +146,13 @@ public class Place implements Printable {
 
 	public void setPlayerHere(boolean playerHere) {
 		this.playerHere = playerHere;
+	}
+
+	public int getLvlObscurity() {
+		return lvlObscurity;
+	}
+
+	public void setLvlObscurity(int lvlObscurity) {
+		this.lvlObscurity = lvlObscurity;
 	}
 }

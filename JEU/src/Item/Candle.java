@@ -6,6 +6,7 @@ public class Candle extends Item {
     private int level;
     private final Lighter lighter;
     private boolean usable;
+    public boolean light;
 
     public Candle() {
         super();
@@ -34,12 +35,19 @@ public class Candle extends Item {
     public boolean light() {
         if (!(this.isEmpty()) && (this.lighter != null) && (this.lighter.getLight())) {
           this.use();
-          return true;
+          this.light = true;
+
+        }else{
+            this.light = false;
         }
-        return false;
+        return this.light;
     }
 
     Lighter getLighter() {
         return lighter;
+    }
+
+    public boolean isLight() {
+        return light;
     }
 }
