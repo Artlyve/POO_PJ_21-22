@@ -7,12 +7,18 @@
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Interaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place/Exit/AutoLockDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/LockDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place/Exit/ClosedDoor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/IdentityItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Identity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Lighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Lighter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/SilverBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/SilverBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/AzraelBlade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/AzraelBlade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/ColtSAA45.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/ColtSAA45.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/CosmicalRayBlaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/CosmicalRayBlaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/SilverDagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/SilverDagger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item/Weapons/WoodStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Weapons/WoodStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Place/Exit/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Place/Exit/LockDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/LockDoor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Place/Exit/MagicDoor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Exit/MagicDoor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place/Exit/SecretCodeDoor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

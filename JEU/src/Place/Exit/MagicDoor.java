@@ -1,5 +1,6 @@
 package Place.Exit;
 
+import Item.Identity;
 import Item.MagicTablet;
 
 public class MagicDoor extends Exit {

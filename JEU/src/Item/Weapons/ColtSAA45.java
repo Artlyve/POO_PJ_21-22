@@ -1,6 +1,6 @@
 package Item.Weapons;
 
-import Item.IdentityItem;
+import Item.Identity;
 import Item.SilverBullet;
 import t_enum.Rarity;
 
@@ -8,7 +8,7 @@ public class ColtSAA45 extends Weapon {
 
     private SilverBullet gunMagazine;
 
-    public ColtSAA45(int d, Rarity r, IdentityItem id, int nbAmmo, IdentityItem idAmmo, boolean b, int durability){
+    public ColtSAA45(int d, Rarity r, Identity id, int nbAmmo, Identity idAmmo, boolean b, int durability){
         this.gunMagazine = new SilverBullet( nbAmmo, idAmmo );
         super.setDamage( d );
         super.setMyRarity( r );

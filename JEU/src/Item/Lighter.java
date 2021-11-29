@@ -15,10 +15,12 @@ public class Lighter extends Item {
         if (this.battery != null) {
             this.battery.use();
             this.isLight = true;
-            return true;
+
+        }else{
+            this.isLight = false;
         }
-        this.isLight = false;
-        return false;
+
+        return this.isLight;
     }
 
     public boolean getLight() {

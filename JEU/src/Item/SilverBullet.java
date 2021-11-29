@@ -5,7 +5,7 @@ public class SilverBullet extends Item {
     private int nbAmmo;
 
 
-    public SilverBullet(int nbAmmo, IdentityItem id) {
+    public SilverBullet(int nbAmmo, Identity id) {
         this.nbAmmo = nbAmmo;
         super.setId( id );
     }
