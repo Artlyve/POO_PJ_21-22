@@ -2,12 +2,12 @@ package Place.Exit;
 
 import Item.Key;
 
-public class AutoLockDoor extends Exit {
+public class LockDoor extends Exit {
 
 	private boolean locked;
 	private Key myKey;
 
-	public AutoLockDoor(Key key) {
+	public LockDoor(Key key) {
 		super();
 		this.myKey = key;
 	}
@@ -46,5 +46,13 @@ public class AutoLockDoor extends Exit {
 
 	public void setLocked(boolean locked) {
 		this.locked = locked;
+	}
+
+	public Key getMyKey() {
+		return myKey;
+	}
+
+	public void setMyKey(Key myKey) {
+		this.myKey = myKey;
 	}
 }

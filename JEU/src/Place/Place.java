@@ -43,6 +43,20 @@ public class Place implements Printable {
 		return this.neighbor;
 	}
 
+	public Exit getNeighbor(Place p){
+		AtomicReference<Exit> e = null;
+		this.ExitList.forEach( exit -> {
+			p.ExitList.forEach( exit1 -> {
+				if(exit == exit1){
+					e.set( exit );
+				}
+
+			} );
+		} );
+
+		return e.get();
+	}
+
 	public boolean isPlayerHere() {
 		this.playerHere = false;
 		this.UnitList.forEach( unit -> {

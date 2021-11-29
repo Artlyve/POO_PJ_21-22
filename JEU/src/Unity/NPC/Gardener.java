@@ -1,5 +1,9 @@
 package Unity.NPC;
 
+import Item.Weapons.Weapon;
+import Unity.Enemy.Enemy;
+import Unity.Player;
+
 public class Gardener extends Neutral {
 
 	private String NAME;
@@ -20,6 +24,16 @@ public class Gardener extends Neutral {
 
 	@Override
 	public void print() {
+
+	}
+
+	@Override
+	public <T extends Enemy> void AttackEnemy(T e, Weapon w) {
+
+	}
+
+	@Override
+	public void AttackPlayer(Player p) {
 
 	}
 }

@@ -17,4 +17,8 @@ public class MagicDoor extends Exit {
             super.open();
         }
     }
+
+    public MagicTablet getMyTablet() {
+        return myTablet;
+    }
 }
