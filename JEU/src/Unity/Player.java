@@ -20,11 +20,13 @@ public class Player extends Unit {
 	private boolean itemHere;
 
 
-	public Player(String name, List<Item> i, int w) {
+	public Player(String name, List<Item> i, int w, Place p) {
 
 		this.NAME = name;
 		this.attaked = false;
 		this.mentalHealth = super.getMAX_HEALTH();
+		this.myPlace = p;
+
 		super.setDead( false );
 		super.setHealth( super.getMAX_HEALTH() );
 		super.setWallet( w );

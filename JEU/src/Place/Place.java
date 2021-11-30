@@ -103,6 +103,7 @@ public class Place implements Printable {
 		return e.get();
 	}
 
+/*
 	public boolean isPlayerHere() {
 		this.playerHere = false;
 		this.UnitList.forEach( unit -> {
@@ -113,6 +114,7 @@ public class Place implements Printable {
 
 		return this.playerHere;
 	}
+*/
 
 	@Override
 	public void print() {

@@ -8,8 +8,9 @@ public class Flashlight extends Item {
     private Battery battery;
     private boolean activate;
 
-    public Flashlight() {
+    public Flashlight(Battery b) {
         super();
+        this.battery = b;
     }
 
     public void freeBattery() {

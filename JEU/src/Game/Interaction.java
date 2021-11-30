@@ -27,11 +27,11 @@ import java.util.List;
 public class Interaction {
 
 
-	public void go(Place dest, Place src, Player p) {
+	public void go(Place dest, Player p) {
 
 
-		if(src.isNeighbor(dest)){
-			Exit e = src.getNeighbor( dest );
+		if(p.getMyPlace().isNeighbor(dest)){
+			Exit e = p.getMyPlace().getNeighbor( dest );
 			if(e instanceof LockDoor){
 				if(((LockDoor) e).isLocked()){
 
@@ -40,8 +40,9 @@ public class Interaction {
 							System.out.println("Vous possédez la clé pour rentrer dans la pièce, Vous l'utilisez pour entrer dans " + dest.getNAME() +".");
 							((LockDoor) e).open( ((Key) item) );
 							p.getItemList().remove( item );
+							p.getMyPlace().getUnitList().remove( p );
+							p.setMyPlace( dest );
 							dest.getUnitList().add( p );
-							src.getUnitList().remove( p );
 
 
 						}else {
@@ -56,9 +57,10 @@ public class Interaction {
 					if(item == ((MagicDoor) e).getMyTablet()){
 						((MagicDoor) e).open((MagicTablet) item);
 						System.out.println("La tablette à ouvert la porte, vous y entrez.");
-						dest.getUnitList().add( p );
-						src.getUnitList().remove( p );
+						p.getMyPlace().getUnitList().remove( p );
 						p.getItemList().remove( item );
+						p.setMyPlace( dest );
+						dest.getUnitList().add( p );
 					}else{
 						System.out.println("Il semble qu'un objet sois requis pour entrer dans cette pièce.");
 					}
@@ -67,8 +69,9 @@ public class Interaction {
 				if(e.isState()){
 					e.open();
 					System.out.println("La porte était fermée, vous l'ouvrez et entrez dans la pièce" + dest.getNAME() + ".");
+					p.getMyPlace().getUnitList().remove( p );
+					p.setMyPlace( dest );
 					dest.getUnitList().add( p );
-					src.getUnitList().remove( p );
 				}
 			}
 		}
@@ -78,6 +81,10 @@ public class Interaction {
 	public void help() {
 		System.out.println("Voici les actions que vous pouvez effectuer");
 		System.out.println("\t-GO [Location], permet de se rendre dans un lieu");
+		System.out.println("\t-LOOK [Place], Découvre le lieu dans lequel vous êtes");
+		System.out.println("\t-USE [Item] ?[Item], utiliser 1 ou 2 deux objets pour effectuer une action");
+		System.out.println("\t-TAKE [Item], Récupère l'objet présent dans la pièce");
+		System.out.println("\t-GARDENER, se rendre directement auprès du jardinier");
 	}
 
 
@@ -105,12 +112,6 @@ public class Interaction {
 
 	}
 
-
-	public void take(Player p, Item i, Place place) {
-		System.out.println("Vous ajoutez " + i.getId().getName() + " à votre liste d'objet");
-		p.getItemList().add( i );
-		place.getItemList().remove( i );
-	}
 
 	public void quit() {
 		System.exit( 0 );
@@ -149,10 +150,10 @@ public class Interaction {
 
 	}
 
-	public void gardener(Place src, Place dest, Player p) {
+	public void gardener(Place dest, Player p) {
 		System.out.println("Vous vous redirigez vers le jardinier.");
 		dest.getUnitList().add( p );
-		src.getUnitList().remove( p );
+		p.getMyPlace().getUnitList().remove( p );
 	}
 
 	public void take(Item i, Player p){
