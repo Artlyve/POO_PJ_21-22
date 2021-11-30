@@ -3,7 +3,7 @@ package Item;
 public class Lighter extends Item {
 
     private boolean isLight;
-    private final Battery battery;
+    private Battery battery;
 
     public Lighter() {
         super();
@@ -21,6 +21,19 @@ public class Lighter extends Item {
         }
 
         return this.isLight;
+    }
+
+    public void freeBattery() {
+        if (this.battery != null) {
+            this.battery = null;
+
+        }
+    }
+
+    public void changeBattery(Battery b) {
+        this.freeBattery();
+        this.battery = b;
+
     }
 
     public boolean getLight() {

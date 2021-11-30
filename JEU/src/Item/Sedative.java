@@ -1,5 +1,7 @@
 package Item;
 
+import Unity.Player;
+
 import java.util.Random;
 
 public class Sedative extends Item{

@@ -6,6 +6,7 @@ import Item.Item;
 public class Flashlight extends Item {
 
     private Battery battery;
+    private boolean activate;
 
     public Flashlight() {
         super();
@@ -13,28 +14,34 @@ public class Flashlight extends Item {
 
     public void freeBattery() {
         if (this.battery != null) {
-            Battery oldBattery = this.battery;
             this.battery = null;
-            oldBattery.freeFlashlight();
         }
     }
 
     public void changeBattery(Battery b) {
         this.freeBattery();
-        b.freeFlashlight();
         this.battery = b;
-        b.setFlashlight(this);
+
     }
 
-    public boolean light() {
+    public void turnOn(){
         if ((this.battery != null) && !(this.battery.isEmpty())) {
-            this.battery.use();
-            return true;
+            this.activate = true;
         }
-        return false;
+    }
+    public void turnOff(){
+        this.activate = false;
     }
 
     Battery getBattery() {
         return battery;
+    }
+
+    public boolean isActivate() {
+        return activate;
+    }
+
+    public void setActivate(boolean activate) {
+        this.activate = activate;
     }
 }

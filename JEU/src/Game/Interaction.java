@@ -1,6 +1,7 @@
 package Game;
 
 import Item.Item;
+import Item.Weapons.ColtSAA45;
 import Place.Exit.LockDoor;
 import Place.Exit.Exit;
 import Place.Exit.MagicDoor;
@@ -9,6 +10,15 @@ import Unity.Enemy.Devil;
 import Unity.Enemy.Spectre;
 import Unity.Player;
 import Item.MagicTablet;
+import Item.Sedative;
+import Item.Food;
+import Item.Flashlight;
+import Item.Chest;
+import Item.Key;
+import Item.Candle;
+import Item.Battery;
+import Item.Lighter;
+import Item.SilverBullet;
 
 import Item.Key;
 
@@ -107,7 +117,35 @@ public class Interaction {
 	}
 
 
-	public void use(Item Items) {
+	public void use(Item i1, Item i2, Player p) {
+		if(i2 == null){
+			if(i1 instanceof Sedative){
+				p.restoreMH( (Sedative) i1 );
+			}else if(i1 instanceof Food){
+				p.restoreH( (Food) i1 );
+			}else if (i1 instanceof Flashlight){
+				if(((Flashlight) i1).isActivate()){
+					((Flashlight) i1).turnOff();
+				}else {
+					((Flashlight) i1).turnOn();
+				}
+			}
+		}else if(  (p.getMyPlace().isItemHere( i1 ) || p.isItemHere( i1 )) &&  (p.getMyPlace().isItemHere( i2 ) || p.isItemHere( i2 )) ){
+			if(i1 instanceof Flashlight && i2 instanceof Battery){
+				((Flashlight) i1).changeBattery( (Battery) i2 );
+				p.getItemList().remove( i2 );
+			}else if(i1 instanceof Chest && i2 instanceof Key){
+				((Chest) i1).open( (Key) i2 );
+				p.getItemList().remove( i2 );
+				p.takeItem( (Chest) i1 );
+			}else if(i1 instanceof Lighter && i2 instanceof Battery){
+				((Lighter) i1).changeBattery( (Battery) i2 );
+				p.getItemList().remove( i2 );
+			}else if(i1 instanceof ColtSAA45 && i2 instanceof SilverBullet){
+				((ColtSAA45) i1).reload( (SilverBullet) i2 );
+				p.getItemList().remove( (SilverBullet) i2 );
+			}
+		}
 
 	}
 
@@ -115,6 +153,14 @@ public class Interaction {
 		System.out.println("Vous vous redirigez vers le jardinier.");
 		dest.getUnitList().add( p );
 		src.getUnitList().remove( p );
+	}
+
+	public void take(Item i, Player p){
+		if(p.getMyPlace().isItemHere( i )){
+			System.out.println("Vous avez récupéré" + i.getId().getName());
+			p.getItemList().add( i );
+			p.getMyPlace().getItemList().remove( i );
+		}
 	}
 
 }

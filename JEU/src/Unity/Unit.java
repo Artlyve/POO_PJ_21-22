@@ -57,4 +57,9 @@ public abstract class Unit implements Attack, Printable {
 	public void setDead(boolean dead) {
 		this.dead = dead;
 	}
+
+	@Override
+	public void AttackPlayer(Player p) {
+
+	}
 }

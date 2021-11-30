@@ -1,9 +1,11 @@
 package Unity;
 
 import Item.Food;
+import Item.Chest;
 import Item.Item;
 import Item.Sedative;
 import Item.Weapons.Weapon;
+import Place.Place;
 import Unity.Enemy.Enemy;
 import t_enum.Rarity;
 
@@ -14,6 +16,9 @@ public class Player extends Unit {
 	private final String NAME;
 	private int mentalHealth;
 	private boolean attaked;
+	private Place myPlace;
+	private boolean itemHere;
+
 
 	public Player(String name, List<Item> i, int w) {
 
@@ -29,6 +34,28 @@ public class Player extends Unit {
 	@Override
 	public void print() {
 
+	}
+
+
+	public void takeItem(Chest c){
+		if(c.isState()){
+			System.out.println("Vous avez récupéré :");
+			c.getItems().forEach( item -> {
+				System.out.println("\t-" + item.getId().getName());
+				this.getItemList().add( item );
+				c.getItems().remove( item );
+			} );
+		}
+	}
+
+	public boolean isItemHere(Item i){
+		this.itemHere = false;
+		this.getItemList().forEach( item -> {
+			if(i == item){
+				this.itemHere = true;
+			}
+		} );
+		return this.itemHere;
 	}
 
 
@@ -107,5 +134,11 @@ public class Player extends Unit {
 		}
 	}
 
+	public Place getMyPlace() {
+		return myPlace;
+	}
 
+	public void setMyPlace(Place myPlace) {
+		this.myPlace = myPlace;
+	}
 }

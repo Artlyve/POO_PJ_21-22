@@ -12,7 +12,7 @@ public class Battery extends Item {
         this.level = DEFAULT_LEVEL;
     }
 
-    public void freeFlashlight() {
+    /*public void freeFlashlight() {
         Flashlight oldFlashlight = this.flashlight;
         this.flashlight = null;
         if (oldFlashlight != null) {
@@ -32,7 +32,7 @@ public class Battery extends Item {
                 f.changeBattery(this);
             }
         }
-    }
+    }*/
 
     public void use() {
         if (!this.isEmpty()) {

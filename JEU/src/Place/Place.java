@@ -19,6 +19,7 @@ public class Place implements Printable {
 	private List<Unit> UnitList;
 	private boolean neighbor;
 	private boolean playerHere;
+	private boolean itemHere;
 	private int lvlObscurity;
 
 
@@ -76,6 +77,16 @@ public class Place implements Printable {
 			} );
 		} );
 		return this.neighbor;
+	}
+
+	public boolean isItemHere(Item i){
+		this.itemHere = false;
+		this.getItemList().forEach( item -> {
+			if(i == item){
+				this.itemHere = true;
+			}
+		} );
+		return this.itemHere;
 	}
 
 	public Exit getNeighbor(Place p){

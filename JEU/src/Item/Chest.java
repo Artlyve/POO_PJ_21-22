@@ -8,23 +8,36 @@ public class Chest extends Item {
 
 	protected boolean state;
 	private boolean locked;
-	private List<Item> ItemList1 = null;
-	private List<Item> ItemList2 = null;
+	private List<Item> items = null;
 	private Key myKey;
 
-	public Chest(Key key, List<Item> ItemList1) {
+	public Chest(Key key, List<Item> i) {
 		this.myKey = key;
 		close(myKey);
-		this.ItemList1.addAll(Arrays.asList());
+		this.items = i;
 	}
 
 	public void open(Key k){
-		this.state = true;
-		System.out.println("Inventaire du coffre : " + ItemList1);
+		if(this.myKey == k){
+			unLock( k );
+			this.state = true;
+			System.out.println("Inventaire du coffre : " );
+			items.forEach( item -> {
+				System.out.println("\t-"+ item.getId().getName() + "\n" + item.getId().getDescription());
+			} );
+		}else{
+			System.out.println("Clé incorrete, impossible d'ouvrir la porte !");
+		}
 	}
 
 	public void close(Key k){
-		this.state = false;
+		if(k == this.myKey){
+			lock( k );
+			this.state = false;
+		}else{
+			this.state = false;
+			System.out.println("Impossible de vérouiller la porte, clé incorrecte, la porte se ferme simplement !");
+		}
 	}
 
 	public void lock(Key k) {
@@ -43,12 +56,6 @@ public class Chest extends Item {
 		}
 	}
 
-	public void addItem(List<Item> ItemList1, List<Item> ItemList2) {
-		if ((state = true) && (this.ItemList1 != null)) {
-			this.ItemList2.addAll(ItemList1);
-			System.out.println("Inventaire de votre sac : " + ItemList2);
-		}
-	}
 
 	public boolean isState() {
 		return state;
@@ -66,4 +73,19 @@ public class Chest extends Item {
 		this.locked = locked;
 	}
 
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+
+	public Key getMyKey() {
+		return myKey;
+	}
+
+	public void setMyKey(Key myKey) {
+		this.myKey = myKey;
+	}
 }
