@@ -9,8 +9,6 @@ public abstract class Weapon extends Item {
 	private int durability;
 	private boolean usable;
 
-
-
 	public int getDamage() {
 		return damage;
 	}
@@ -40,7 +38,6 @@ public abstract class Weapon extends Item {
 	public void setMyRarity(Rarity myRarity) {
 		this.myRarity = myRarity;
 	}
-
 
 	public int getDurability() {
 		return durability;

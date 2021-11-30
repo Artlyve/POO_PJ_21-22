@@ -17,22 +17,23 @@ public class Place implements Printable {
 	private List<Exit> ExitList;
 	private List<Item> ItemList;
 	private List<Unit> UnitList;
+	private String description;
 	private boolean neighbor;
 	private boolean playerHere;
 	private boolean itemHere;
 	private int lvlObscurity;
 
 
-	public Place(String n, List<Item> i, List<Unit>  u, List<Exit> e, int o) {
+	public Place(String n, List<Item> i, List<Unit>  u, List<Exit> e, String d, int o) {
 		this.NAME = n;
 		this.ItemList = i;
 		this.UnitList = u;
 		this.ExitList = e;
+		this.description = d;
 		this.neighbor = false;
 		this.playerHere = false;
 		this.lvlObscurity = o;
 	}
-
 
 	public int checkObscurity(){
 		AtomicReference<Player> p = null;
@@ -118,7 +119,7 @@ public class Place implements Printable {
 
 	@Override
 	public void print() {
-
+		System.out.println("\n" + this.getDescription() + "\n");
 	}
 
 	public String getNAME() {
@@ -147,6 +148,10 @@ public class Place implements Printable {
 
 	public void setUnitList(List<Unit> unitList) {
 		UnitList = unitList;
+	}
+
+	public String getDescription() {
+		return this.description;
 	}
 
 	public boolean isNeighbor() {

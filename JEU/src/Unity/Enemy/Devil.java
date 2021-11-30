@@ -13,7 +13,6 @@ public class Devil extends Enemy {
 
 	private final String NAME;
 
-
 	public Devil(String name, List<Item> i, int w, List<String> s, Rarity r, int c){
 
 		this.NAME = name;
@@ -32,10 +31,6 @@ public class Devil extends Enemy {
 
 	}
 
-
-
-
-
 	@Override
 	public <T extends Enemy> void AttackEnemy(T e, Weapon w) {
 
@@ -47,7 +42,6 @@ public class Devil extends Enemy {
 			System.out.println("Vous avez vaincu " + this.getNAME() + " !");
 			super.setDead( true );
 		}
-
 	}
 
 	public String getNAME() {

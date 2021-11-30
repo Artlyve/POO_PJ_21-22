@@ -7,6 +7,7 @@ import Item.Sedative;
 import Item.Weapons.Weapon;
 import Place.Place;
 import Unity.Enemy.Enemy;
+import Unity.NPC.Gardener;
 import t_enum.Rarity;
 
 import java.util.List;
@@ -15,15 +16,19 @@ public class Player extends Unit {
 
 	private final String NAME;
 	private int mentalHealth;
-	private boolean attaked;
+	private boolean attacked;
 	private Place myPlace;
 	private boolean itemHere;
 
+<<<<<<< Updated upstream
 
 	public Player(String name, List<Item> i, int w, Place p) {
+=======
+	public Player(String name, List<Item> i, int w) {
+>>>>>>> Stashed changes
 
 		this.NAME = name;
-		this.attaked = false;
+		this.attacked = false;
 		this.mentalHealth = super.getMAX_HEALTH();
 		this.myPlace = p;
 
@@ -38,7 +43,6 @@ public class Player extends Unit {
 
 	}
 
-
 	public void takeItem(Chest c){
 		if(c.isState()){
 			System.out.println("Vous avez récupéré :");
@@ -50,16 +54,32 @@ public class Player extends Unit {
 		}
 	}
 
+	public void gardenerExchange(Gardener g) {
+		if (g.isTalkative()) {
+			g.getItems().forEach(item -> {
+				System.out.println("\t-" + item.getId().getName());
+				this.getItemList().add( item );
+				g.getItems().remove( item );
+				int wallet = -item.getId().getValue();
+				super.setWallet(wallet);
+			});
+		}
+	}
+
 	public boolean isItemHere(Item i){
-		this.itemHere = false;
-		this.getItemList().forEach( item -> {
+		System.out.println(" Inventaire : \n");
+		if(!this.itemHere) {
+			System.out.println("Inventaire vide.");
+		}
+		else {
+			this.getItemList().forEach( item -> {
 			if(i == item){
 				this.itemHere = true;
 			}
 		} );
+		}
 		return this.itemHere;
 	}
-
 
 	//Méthode restauration des HP, usage unique supprimé des items que possèdent le joueur
 	public void restoreH(Food f){
@@ -73,7 +93,6 @@ public class Player extends Unit {
 
 	//Méthode restauration du Mental, usage unique supprimé des items que possèdent le joueur
 	public void restoreMH(Sedative s){
-
 		if(this.getMentalHealth() + s.getHealing() > 100){
 				setMentalHealth( 100 );
 		}else{
@@ -90,34 +109,29 @@ public class Player extends Unit {
 		this.mentalHealth = mentalHealth;
 	}
 
-
-
-
 	public boolean canAttak(Enemy e, Weapon w){
 		if(e.getMyRarity() == Rarity.common && w.getMyRarity() == Rarity.common){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.unusual && w.getMyRarity() == Rarity.unusual){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.epic && w.getMyRarity() == Rarity.epic){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.legendary && w.getMyRarity() == Rarity.legendary){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.common && ( w.getMyRarity() == Rarity.common
 				|| w.getMyRarity() == Rarity.unusual || w.getMyRarity() == Rarity.epic
 				|| w.getMyRarity() == Rarity.legendary)){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.unusual && ( w.getMyRarity() == Rarity.unusual
 				|| w.getMyRarity() == Rarity.epic || w.getMyRarity() == Rarity.legendary)){
-			this.attaked = true;
+			this.attacked = true;
 		}else if(e.getMyRarity() == Rarity.epic && (w.getMyRarity() == Rarity.epic || w.getMyRarity() == Rarity.legendary)){
-			this.attaked = true;
+			this.attacked = true;
 		}else {
-			this.attaked = false;
+			this.attacked = false;
 		}
-
-		return this.attaked;
+		return this.attacked;
 	}
-
 
 	//Manque méthode dead
 	@Override
@@ -132,7 +146,7 @@ public class Player extends Unit {
 
 			}
 			w.use();
-			this.attaked = false;
+			this.attacked = false;
 		}
 	}
 

@@ -17,15 +17,15 @@ public class Chest extends Item {
 		this.items = i;
 	}
 
-	public void open(Key k){
-		if(this.myKey == k){
+	public void open(Key k) {
+		if(this.myKey == k) {
 			unLock( k );
 			this.state = true;
 			System.out.println("Inventaire du coffre : " );
 			items.forEach( item -> {
 				System.out.println("\t-"+ item.getId().getName() + "\n" + item.getId().getDescription());
 			} );
-		}else{
+		}else {
 			System.out.println("Clé incorrete, impossible d'ouvrir la porte !");
 		}
 	}
@@ -55,7 +55,6 @@ public class Chest extends Item {
 			System.out.println("Attention ta porte est ouverte !");
 		}
 	}
-
 
 	public boolean isState() {
 		return state;
