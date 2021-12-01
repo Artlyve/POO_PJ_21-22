@@ -5,13 +5,21 @@ import Item.Weapons.Weapon;
 import Unity.Player;
 import t_enum.Rarity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Spectre extends Enemy {
 
 	private final String NAME;
 
-	public Spectre(String name, List<Item> i, int w, List<String> s, Rarity r, int c){
+	public Spectre(String name, List<Item> i, int w, Rarity r){
+		List<String> talk = new ArrayList<>();
+		String talk1 = "MEURT !!";
+		talk.add( talk1 );
+		String talk2 = "TU VAS MOURRIR !!";
+		talk.add( talk2 );
+		String talk3 = "BOUUU !!";
+		talk.add( talk3 );
 
 		this.NAME = name;
 
@@ -20,8 +28,16 @@ public class Spectre extends Enemy {
 		super.setWallet( w );
 		super.setItemList( i );
 		super.setMyRarity( r );
-		super.setTalking( s );
-		super.setCc_attack( c );
+		super.setTalking( talk );
+		if(super.getMyRarity() == Rarity.common){
+			super.setCc_attack( 65 );
+		}else if(super.getMyRarity() == Rarity.unusual){
+			super.setCc_attack( 75 );
+		}else if(super.getMyRarity() == Rarity.epic){
+			super.setCc_attack( 85 );
+		}else if(super.getMyRarity() == Rarity.legendary){
+			super.setCc_attack( 100 );
+		}
 	}
 
 	@Override

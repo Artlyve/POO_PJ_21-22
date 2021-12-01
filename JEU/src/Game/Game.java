@@ -6,11 +6,14 @@ import Item.Weapons.*;
 import Place.Exit.Exit;
 import Place.Exit.LockDoor;
 import Place.Place;
+import Unity.Enemy.Spectre;
 import Unity.NPC.Gardener;
 import Unity.Player;
+import Unity.Unit;
 import t_enum.Rarity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Game {
@@ -20,7 +23,7 @@ public class Game {
 
 
 
-	/*Key*/
+	/******************************	KEYS	*********************************/
 	private Key  keyVS = new Key("Clé pour se rendre à l'escalier", 0);
 	private Key  keyC2C1 = new Key("Clé pour se rendre au Couloir 1", 1);
 	private Key  keyC2C3 = new Key("Clé pour se rendre au Couloir 3", 2);
@@ -29,7 +32,7 @@ public class Game {
 	private Key  keyC3CH3 = new Key("Clé pour ouvrir toutes les portes de la chambre 3", 5);
 	private Key  keyC3SJ = new Key("Clé pour ouvrir la salle de jeux", 6);
 
-	/*Exit*/
+	/****************************** 	EXITS	*********************************/
 	//Jardin à Vestibule
 	private Exit jv = new Exit();
 	//Vestibule à C2
@@ -68,19 +71,15 @@ public class Game {
 	private Exit ch3sj = new Exit( );
 
 
-	/*Identity*/
+	/******************************	Identity	*********************************/
 	private Identity identityWS = new Identity( 10, "Bâton de combat", "Cette arme à failbe dégat permet d'affronter de simple spectre" );
 	private Identity identitySD = new Identity( 50, "Dague en argent", "Une arme assez puissante pour affronter des spectres puisssants" );
 	private Identity identityColt = new Identity( 75, "Colt SAA 45.", "Ce petit pistolet t'aidera à tuer les spectres" );
 	private Identity identityAZB = new Identity( 150,"Lame d'Azrael", "La lame d'Azrael, cette lame si spécial qu'elle tuera n'importe qu'elle Demon" );
 	private Identity identitySB = new Identity( 6, "Chargeur du Colt", "");
-	/*Items*/
 
-
-	/*
-	* Les liste items*/
-
-	//Pour player
+	/******************************	Lists Items	*********************************/
+	///////////////////////////////// For Player
 
 	private Battery battery = new Battery();
 	private Flashlight flashlight = new Flashlight(battery);
@@ -88,16 +87,8 @@ public class Game {
 
 	private List<Item> itemsPlayer = new ArrayList<Item>();
 
-	public void initItemPlayer(int nbBat) {
 
-		List<Battery> bat = createNBBat( nbBat );
-		this.itemsPlayer.addAll( bat );
-		this.itemsPlayer.add( flashlight );
-		this.itemsPlayer.add( woodStaff );
-	}
-
-
-	//Gardener
+	////////////////////////////// For gardener
 
 	private WoodStaff woodStaffGardener = new WoodStaff( 20, Rarity.common, identityWS, false );
 	private AzraelBlade azraelBladeGardener = new AzraelBlade( 100, Rarity.epic, identityAZB, false );
@@ -110,34 +101,91 @@ public class Game {
 	private List<Item> itemsSecret = new ArrayList<Item>();
 
 	private SilverDagger SDGardener = new SilverDagger( 75, Rarity.unusual, identitySD,false );
-	public void initItemGardener() {
 
-		this.itemsGardener.add( woodStaffGardener );
-		this.itemsGardener.add( azraelBladeGardener );
-		this.itemsGardener.add( silverDaggerGardener );
-		this.itemsGardener.add( coltSAA45Gardener );
-		this.itemsGardener.add( lighterGardener );
 
-		this.itemsSecret.add( magicTablet );
-		this.itemsPlayer.add( keyVS );
+	///////////////////////////////// For Spectre
+
+	private List<Item> itemsSpectre00 = new ArrayList<Item>();
+	private List<Item> itemsSpectre01 = new ArrayList<Item>();
+	private List<Item> itemsSpectre02 = new ArrayList<Item>();
+
+
+	///////////////////////////// For Cheat
+	private  MagicTabletFragment magicTabletFragment00 = new MagicTabletFragment();
+	private  MagicTabletFragment magicTabletFragment01 = new MagicTabletFragment();
+	private  MagicTabletFragment magicTabletFragment02 = new MagicTabletFragment();
+
+	/////////////////////////// For Vestibule
+	private Key keyChestVestibule = new Key( "Clé du coffre Vestibule", 7);
+	private List<Item> itemsChestVestibule = new ArrayList<Item>();
+	private Chest chestVestibule = new Chest( keyChestVestibule,initItemList( itemsChestVestibule, new Food(), new Food(), new Food() ) );
+
+	/******************************	Units	*********************************/
+	private Player myPlayer = new Player( "Arthur",
+			initItemList( itemsPlayer, flashlight, woodStaff, new Battery(), new Battery() ) ,10, this.garden );
+
+	private Gardener gardener = new Gardener( "Edward",
+			initItemList( itemsGardener, woodStaffGardener, azraelBladeGardener, silverDaggerGardener, coltSAA45Gardener, lighterGardener ),
+			initItemList( itemsSecret, magicTablet, keyVS ), 0, SDGardener);
+
+	/*Units Vestibule*/
+
+	private Spectre spectre00 = new Spectre( "Roger le spectre",
+			initItemList( itemsSpectre00, new Lighter(), new Battery(), new Battery() ), 10, Rarity.common );
+	private Spectre spectre01 = new Spectre( "Mirielle l'accro au sport",
+			initItemList( itemsSpectre00, new Food(), new Sedative() ), 5, Rarity.common );
+	private Spectre spectre02 = new Spectre( "Bob le bricoleur", initItemList( itemsSpectre02, keyChestVestibule ), 0, Rarity.common );
+
+	/******************************	Places	*********************************/
+	//////////////////////////Garden
+	private List<Unit> unitListGarden = new ArrayList<>();
+	private List<Exit> exitsListGarden = new ArrayList<>();
+	private List<Item> itemsGarden = new ArrayList<Item>();
+
+	private Place garden = new Place( "Jardin",
+			initItemList( itemsGarden, magicTabletFragment00, new Candle(), new Candle() ),
+			initUnitList( unitListGarden, gardener ),
+			initExitList( exitsListGarden, jv ), "", 0);
+
+
+	////////////////////////////////// Vestibule
+	private List<Unit> unitListVestibule = new ArrayList<>();
+	private List<Exit> exitsListVestibule = new ArrayList<>();
+	private List<Item> itemsListVestibule = new ArrayList<Item>();
+
+	private Place Vestibule = new Place( "Vestibule"
+			,initItemList( itemsListVestibule, new Candle(), new Candle(), magicTabletFragment01, chestVestibule )
+			,initUnitList( unitListVestibule, spectre00, spectre01, spectre02 )
+			,initExitList( exitsListGarden, jv, vc2, ev ), "", 0
+			);
+
+
+
+
+
+
+	public List<Exit> initExitList(List<Exit> listExits,Exit...exits){
+
+		Collections.addAll( listExits, exits );
+		return listExits;
+
 	}
+	public List<Unit> initUnitList(List<Unit> listUnits,Unit...units){
 
-	/*
-	* Unit
-	* */
-	private Player myPlayer = new Player( "Arthur", this.itemsPlayer ,10, this.garden );
+		Collections.addAll( listUnits, units );
+		return listUnits;
 
-	private Gardener gardener = new Gardener( "Edward", this.itemsGardener, this.itemsSecret, 0, SDGardener, 100 );
+	}
+	public List<Item> initItemList(List<Item> listItems,Item...items){
 
+		Collections.addAll( listItems, items );
+		return listItems;
 
-
-	/*Places*/
-	private Place garden = new Place(  );
-
+	}
 
 	public List<Battery> createNBBat(int n){
 		List<Battery> b = new ArrayList<Battery>();
-		for(int i = 0; i <= n; i++){
+		for(int i = 1; i <= n; i++){
 			b.add( new Battery() );
 		}
 		return b;

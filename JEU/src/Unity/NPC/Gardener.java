@@ -15,7 +15,7 @@ public class Gardener extends Npc {
 	protected boolean talkative;
 	private List<Item> secretItem;
 
-	public Gardener(String name, List<Item> i, List<Item> secretItem,int wa, Weapon we, int c) {
+	public Gardener(String name, List<Item> i, List<Item> secretItem,int wa, Weapon we) {
 		this.NAME = name;
 		this.talkative = false;
 		this.secretItem = secretItem;
@@ -24,7 +24,7 @@ public class Gardener extends Npc {
 		super.setWallet(wa);
 		super.setItemList(i);
 		super.setWeapon(we);
-		super.setCc_attack(c);
+		super.setCc_attack(100);
 	}
 
 	public void exchange() {

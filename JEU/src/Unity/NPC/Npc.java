@@ -17,7 +17,7 @@ public abstract class Npc extends Unit {
     @Override
     public void AttackPlayer(Player p) {
         Random r = new Random();
-        int n = r.nextInt((6-1) +1 ) + 1;
+        int n = r.nextInt((4-1) +1 ) + 1;
         int d = r.nextInt((MAX_DAMMAGE - MIN_DAMMAGE) +1 ) + MIN_DAMMAGE;
         if(n == 1){
             if(p.getHealth()-this.cc_attack <= 0){

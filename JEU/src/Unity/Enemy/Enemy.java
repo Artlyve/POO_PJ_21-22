@@ -8,7 +8,7 @@ import java.util.Random;
 
 public abstract class Enemy extends Npc implements Talk {
 
-	private final int MAX_TALKING = 10;
+	private final int MAX_TALKING = 3;
 	private final int MIN_TALKING = 1;
 
 	private List<String> talking;
