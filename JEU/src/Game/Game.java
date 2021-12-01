@@ -2,11 +2,13 @@ package Game;
 import Item.*;
 import Item.Item;
 import Item.Key;
+import Item.Weapons.*;
 import Place.Exit.Exit;
 import Place.Exit.LockDoor;
 import Place.Place;
 import Unity.NPC.Gardener;
 import Unity.Player;
+import t_enum.Rarity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,26 +68,79 @@ public class Game {
 	private Exit ch3sj = new Exit( );
 
 
-
+	/*Identity*/
+	private Identity identityWS = new Identity( 10, "Bâton de combat", "Cette arme à failbe dégat permet d'affronter de simple spectre" );
+	private Identity identitySD = new Identity( 50, "Dague en argent", "Une arme assez puissante pour affronter des spectres puisssants" );
+	private Identity identityColt = new Identity( 75, "Colt SAA 45.", "Ce petit pistolet t'aidera à tuer les spectres" );
+	private Identity identityAZB = new Identity( 150,"Lame d'Azrael", "La lame d'Azrael, cette lame si spécial qu'elle tuera n'importe qu'elle Demon" );
+	private Identity identitySB = new Identity( 6, "Chargeur du Colt", "");
 	/*Items*/
-	private Battery battery = new Battery();
-	private Flashlight flashlight = new Flashlight(battery);
-
 
 
 	/*
 	* Les liste items*/
 
 	//Pour player
+
+	private Battery battery = new Battery();
+	private Flashlight flashlight = new Flashlight(battery);
+	private WoodStaff woodStaff = new WoodStaff( 20, Rarity.common, identityWS, false);
+
 	private List<Item> itemsPlayer = new ArrayList<Item>();
 
+	public void initItemPlayer(int nbBat) {
+
+		List<Battery> bat = createNBBat( nbBat );
+		this.itemsPlayer.addAll( bat );
+		this.itemsPlayer.add( flashlight );
+		this.itemsPlayer.add( woodStaff );
+	}
+
+
+	//Gardener
+
+	private WoodStaff woodStaffGardener = new WoodStaff( 20, Rarity.common, identityWS, false );
+	private AzraelBlade azraelBladeGardener = new AzraelBlade( 100, Rarity.epic, identityAZB, false );
+	private SilverDagger silverDaggerGardener = new SilverDagger( 50, Rarity.unusual, identitySD,false );
+	private ColtSAA45 coltSAA45Gardener = new ColtSAA45( 60, Rarity.unusual, identityColt, new SilverBullet( 6, identitySB ),false );
+	private Lighter lighterGardener = new Lighter();
+	private MagicTablet magicTablet = new MagicTablet();
+
+	private List<Item> itemsGardener = new ArrayList<Item>();
+	private List<Item> itemsSecret = new ArrayList<Item>();
+
+	private SilverDagger SDGardener = new SilverDagger( 75, Rarity.unusual, identitySD,false );
+	public void initItemGardener() {
+
+		this.itemsGardener.add( woodStaffGardener );
+		this.itemsGardener.add( azraelBladeGardener );
+		this.itemsGardener.add( silverDaggerGardener );
+		this.itemsGardener.add( coltSAA45Gardener );
+		this.itemsGardener.add( lighterGardener );
+
+		this.itemsSecret.add( magicTablet );
+		this.itemsPlayer.add( keyVS );
+	}
 
 	/*
 	* Unit
 	* */
 	private Player myPlayer = new Player( "Arthur", this.itemsPlayer ,10, this.garden );
-	private Gardener gardener = new Gardener(  );
+
+	private Gardener gardener = new Gardener( "Edward", this.itemsGardener, this.itemsSecret, 0, SDGardener, 100 );
+
+
+
 	/*Places*/
 	private Place garden = new Place(  );
+
+
+	public List<Battery> createNBBat(int n){
+		List<Battery> b = new ArrayList<Battery>();
+		for(int i = 0; i <= n; i++){
+			b.add( new Battery() );
+		}
+		return b;
+	}
 
 }

@@ -1,6 +1,7 @@
 package Unity.NPC;
 
 import Item.Item;
+import Item.MagicTablet;
 import Item.Weapons.Weapon;
 import Unity.Enemy.Enemy;
 import Unity.Player;
@@ -12,11 +13,12 @@ public class Gardener extends Npc {
 
 	private final String NAME;
 	protected boolean talkative;
-	private List<Item> items = null;
+	private List<Item> secretItem;
 
-	public Gardener(String name, List<Item> i, int wa, Weapon we, int c) {
+	public Gardener(String name, List<Item> i, List<Item> secretItem,int wa, Weapon we, int c) {
 		this.NAME = name;
 		this.talkative = false;
+		this.secretItem = secretItem;
 		super.setDead(false);
 		super.setHealth(super.getMAX_HEALTH());
 		super.setWallet(wa);
@@ -26,14 +28,14 @@ public class Gardener extends Npc {
 	}
 
 	public void exchange() {
-		if (this.talkative = true) {
+		if (this.isTalkative()) {
 			System.out.println("Voici quelques articles en ma possession : ");
-			items.forEach( item -> {
+			super.getItemList().forEach( item -> {
 				System.out.println("\t-"+ item.getId().getName() + item.getId().getValue() + "\n" + item.getId().getDescription());
 				Scanner sc = new Scanner(System.in);
 				System.out.println("Indique moi le nom de l'article qui t'intéresse : ");
 				String answer = sc.next();
-				if (answer == item.getId().getName()) {
+				if (answer.equals( item.getId().getName())) {
 					if (super.getWallet() >= item.getId().getValue()) {
 						System.out.println("Voici ton article.");
 						System.out.println("\t" + item.getId().getName() + item.getId().getValue() + "\n" + item.getId().getDescription());
@@ -77,13 +79,7 @@ public class Gardener extends Npc {
 		return talkative;
 	}
 
-	public List<Item> getItems() {
-		return items;
-	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
 
 	@Override
 	public void dead(Player p) {
@@ -91,5 +87,17 @@ public class Gardener extends Npc {
 			System.out.println("Vous avez vaincu " + this.getNAME() + " !");
 			super.setDead( true );
 		}
+	}
+
+	public void setTalkative(boolean talkative) {
+		this.talkative = talkative;
+	}
+
+	public List<Item> getSecretItem() {
+		return secretItem;
+	}
+
+	public void setSecretItem(List<Item> secretItem) {
+		this.secretItem = secretItem;
 	}
 }

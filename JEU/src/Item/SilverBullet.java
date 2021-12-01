@@ -6,7 +6,12 @@ public class SilverBullet extends Item {
 
 
     public SilverBullet(int nbAmmo, Identity id) {
-        this.nbAmmo = nbAmmo;
+
+        if(nbAmmo > MAX_NB_BULLET){
+            this.nbAmmo = MAX_NB_BULLET;
+        }else{
+            this.nbAmmo = nbAmmo;
+        }
         super.setId( id );
     }
 

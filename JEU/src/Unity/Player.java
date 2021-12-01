@@ -20,12 +20,8 @@ public class Player extends Unit {
 	private Place myPlace;
 	private boolean itemHere;
 
-<<<<<<< Updated upstream
 
 	public Player(String name, List<Item> i, int w, Place p) {
-=======
-	public Player(String name, List<Item> i, int w) {
->>>>>>> Stashed changes
 
 		this.NAME = name;
 		this.attacked = false;
@@ -56,10 +52,10 @@ public class Player extends Unit {
 
 	public void gardenerExchange(Gardener g) {
 		if (g.isTalkative()) {
-			g.getItems().forEach(item -> {
+			g.getItemList().forEach(item -> {
 				System.out.println("\t-" + item.getId().getName());
 				this.getItemList().add( item );
-				g.getItems().remove( item );
+				g.getItemList().remove( item );
 				int wallet = -item.getId().getValue();
 				super.setWallet(wallet);
 			});
@@ -145,7 +141,6 @@ public class Player extends Unit {
 				e.setHealth( w.getDamage() );
 
 			}
-			w.use();
 			this.attacked = false;
 		}
 	}

@@ -5,12 +5,11 @@ import t_enum.Rarity;
 
 public class AzraelBlade extends Weapon {
 
-    public AzraelBlade(int d, Rarity r, Identity id, boolean b, int durability){
+    public AzraelBlade(int d, Rarity r, Identity id, boolean b){
         super.setDamage( d );
         super.setMyRarity( r );
         super.setId( id );
 
-        super.setDurability( durability );
-        super.setUsable( b );
+
     }
 }

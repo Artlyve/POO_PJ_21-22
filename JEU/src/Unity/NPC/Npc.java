@@ -69,4 +69,6 @@ public abstract class Npc extends Unit {
     public void setCc_attack(int cc_attack) {
         this.cc_attack = cc_attack;
     }
+
+
 }
