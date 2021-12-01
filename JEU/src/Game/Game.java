@@ -160,10 +160,6 @@ public class Game {
 			);
 
 
-
-
-
-
 	public List<Exit> initExitList(List<Exit> listExits,Exit...exits){
 
 		Collections.addAll( listExits, exits );

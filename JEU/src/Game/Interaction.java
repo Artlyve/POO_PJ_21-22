@@ -29,7 +29,6 @@ public class Interaction {
 
 	public void go(Place dest, Player p) {
 
-
 		if(p.getMyPlace().isNeighbor(dest)){
 			Exit e = p.getMyPlace().getNeighbor( dest );
 			if(e instanceof LockDoor){
@@ -44,13 +43,11 @@ public class Interaction {
 							p.setMyPlace( dest );
 							dest.getUnitList().add( p );
 
-
 						}else {
 							System.out.println("Vous ne pouvez pas accéder à cette pièce: " + dest.getNAME());
 							System.out.println("Une clé est requise: " + ((LockDoor) e).getMyKey().getName());
 						}
 					} );
-
 
 			}}else if(e instanceof MagicDoor){
 				p.getItemList().forEach( item -> {
@@ -112,11 +109,17 @@ public class Interaction {
 
 	}
 
+	public void take(Item i, Player p){
+		if(p.getMyPlace().isItemHere( i )){
+			System.out.println("Vous avez récupéré" + i.getId().getName());
+			p.getItemList().add( i );
+			p.getMyPlace().getItemList().remove( i );
+		}
+	}
 
 	public void quit() {
 		System.exit( 0 );
 	}
-
 
 	public void use(Item i1, Item i2, Player p) {
 		if(i2 == null){
@@ -155,13 +158,4 @@ public class Interaction {
 		dest.getUnitList().add( p );
 		p.getMyPlace().getUnitList().remove( p );
 	}
-
-	public void take(Item i, Player p){
-		if(p.getMyPlace().isItemHere( i )){
-			System.out.println("Vous avez récupéré" + i.getId().getName());
-			p.getItemList().add( i );
-			p.getMyPlace().getItemList().remove( i );
-		}
-	}
-
 }

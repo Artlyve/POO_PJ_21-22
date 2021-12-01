@@ -2,9 +2,6 @@ package Item;
 
 public class Key extends Item {
 
-	public final static String DEFAULT_NAME = "nom";
-	public final static int DEFAULT_ID = 0;
-
 	private final String NAME;
 	private final int ID;
 

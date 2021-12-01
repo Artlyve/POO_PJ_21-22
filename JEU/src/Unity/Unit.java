@@ -11,12 +11,10 @@ public abstract class Unit implements Attack, Printable {
 
 
 	private final int MAX_HEALTH = 100;
-	private int Wallet;
-	private List<Item> ItemList;
 	private int Health;
+	private List<Item> ItemList;
+	private int Wallet;
 	private boolean dead;
-
-
 
 	public <T extends Item> void deleteItem(T e){
 		ItemList.remove( e );
