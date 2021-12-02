@@ -8,10 +8,11 @@ public class Chest extends Item {
 
 	protected boolean state;
 	private boolean locked;
-	private List<Item> items = null;
+	private List<Item> items = new ArrayList<Item>();
 	private Key myKey;
 
-	public Chest(Key key, List<Item> i) {
+	public Chest(Key key, List<Item> i, Identity id) {
+		super.setId( id );
 		this.myKey = key;
 		close(myKey);
 		this.items = i;

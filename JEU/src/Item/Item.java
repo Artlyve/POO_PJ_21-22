@@ -11,7 +11,8 @@ public abstract class Item implements Printable {
 
 	@Override
 	public void print() {
-
+		System.out.println("Nom " + getId().getName() );
+		System.out.println("Description" + getId().getDescription());
 	}
 	public Identity getId() {
 		return id;

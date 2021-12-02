@@ -8,8 +8,8 @@ public class Candle extends Item {
     private boolean usable;
     public boolean light;
 
-    public Candle() {
-        super();
+    public Candle(Identity id) {
+        super.setId( id );
         this.level = DEFAULT_LEVEL;
         this.lighter = null;
         this.usable = true;

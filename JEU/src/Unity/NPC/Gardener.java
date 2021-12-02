@@ -13,7 +13,7 @@ public class Gardener extends Npc {
 
 	private final String NAME;
 	protected boolean talkative;
-	private List<Item> secretItem;
+	private List<Item> secretItem = new ArrayList<Item>();
 
 	public Gardener(String name, List<Item> i, List<Item> secretItem,int wa, Weapon we) {
 		this.NAME = name;
@@ -61,15 +61,8 @@ public class Gardener extends Npc {
 
 	}
 
-	@Override
-	public <T extends Enemy> void AttackEnemy(T e, Weapon w) {
 
-	}
 
-	@Override
-	public void AttackPlayer(Player p) {
-
-	}
 
 	public String getNAME() {
 		return NAME;
@@ -99,5 +92,10 @@ public class Gardener extends Npc {
 
 	public void setSecretItem(List<Item> secretItem) {
 		this.secretItem = secretItem;
+	}
+
+	@Override
+	public <T extends Enemy> void attackEnemy(T e, Weapon w) {
+
 	}
 }

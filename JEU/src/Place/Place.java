@@ -5,18 +5,20 @@ import Interface.Printable;
 import Item.Item;
 import Item.Lighter;
 import Item.Candle;
+import Unity.Enemy.Spectre;
 import Unity.Player;
 import Unity.Unit;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Place implements Printable {
 
 	private final String NAME;
-	private List<Exit> ExitList;
-	private List<Item> ItemList;
-	private List<Unit> UnitList;
+	private List<Exit> ExitList = new ArrayList<>();
+	private List<Item> ItemList = new ArrayList<Item>();
+	private List<Unit> UnitList = new ArrayList<>();
 	private String description;
 	private boolean neighbor;
 	private boolean playerHere;
@@ -91,31 +93,46 @@ public class Place implements Printable {
 	}
 
 	public Exit getNeighbor(Place p){
-		AtomicReference<Exit> e = null;
-		this.ExitList.forEach( exit -> {
-			p.ExitList.forEach( exit1 -> {
-				if(exit == exit1){
-					e.set( exit );
-				}
+		AtomicReference<Exit> e = new AtomicReference<>();
+		if(this.ExitList != null){
+			this.ExitList.forEach( exit -> {
+				p.ExitList.forEach( exit1 -> {
+					if(exit == exit1){
+						e.set( exit );
+					}
 
+				} );
 			} );
-		} );
+		}
 
 		return e.get();
 	}
 
-/*
-	public boolean isPlayerHere() {
-		this.playerHere = false;
-		this.UnitList.forEach( unit -> {
-			if(unit instanceof Player){
-				this.playerHere = true;
-			}
-		} );
+	public Player getPlayer() {
+		AtomicReference<Player> p = new AtomicReference<>();
+		if(this.UnitList != null){
+			this.UnitList.forEach( unit -> {
+				if(unit instanceof Player){
+					p.set( (Player) unit );
+				}
+			} );
+		}
 
+		return p.get();
+	}
+	public boolean isPlayerHere(){
+		this.playerHere = false;
+
+
+		if(this.getUnitList() != null){
+			this.getUnitList().forEach( unit -> {
+				if(unit instanceof  Player){
+					this.playerHere = true;
+				}
+			} );
+		}
 		return this.playerHere;
 	}
-*/
 
 	@Override
 	public void print() {

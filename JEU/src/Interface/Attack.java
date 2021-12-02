@@ -6,6 +6,8 @@ import Unity.Player;
 
 public interface Attack {
 
-	<T extends Enemy>void AttackEnemy(T e, Weapon w);
-	void AttackPlayer(Player p);
+	<T extends Enemy>void attackEnemy(T e, Weapon w);
+	void attackPlayer(Player p);
+
+	void aleaAttak( Player p);
 }

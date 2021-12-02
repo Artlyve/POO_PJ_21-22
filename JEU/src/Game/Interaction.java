@@ -27,48 +27,47 @@ import java.util.List;
 public class Interaction {
 
 
-	public void go(Place dest, Player p) {
+	public void go(Place dest, Place src) {
 
-		if(p.getMyPlace().isNeighbor(dest)){
-			Exit e = p.getMyPlace().getNeighbor( dest );
+		if(src.isNeighbor(dest)){
+
+			Exit e = src.getNeighbor( dest );
+
 			if(e instanceof LockDoor){
 				if(((LockDoor) e).isLocked()){
 
-					p.getItemList().forEach( item -> {
+					src.getPlayer().getItemList().forEach( item -> {
 						if(item == ((LockDoor) e).getMyKey()){
 							System.out.println("Vous possédez la clé pour rentrer dans la pièce, Vous l'utilisez pour entrer dans " + dest.getNAME() +".");
 							((LockDoor) e).open( ((Key) item) );
-							p.getItemList().remove( item );
-							p.getMyPlace().getUnitList().remove( p );
-							p.setMyPlace( dest );
-							dest.getUnitList().add( p );
+							src.getPlayer().getItemList().remove( item );
+							src.getUnitList().remove( src.getPlayer() );
+							dest.getUnitList().add( src.getPlayer() );
 
 						}else {
 							System.out.println("Vous ne pouvez pas accéder à cette pièce: " + dest.getNAME());
 							System.out.println("Une clé est requise: " + ((LockDoor) e).getMyKey().getName());
 						}
 					} );
-
-			}}else if(e instanceof MagicDoor){
-				p.getItemList().forEach( item -> {
+				}
+			}else if(e instanceof MagicDoor){
+				src.getPlayer().getItemList().forEach( item -> {
 					if(item == ((MagicDoor) e).getMyTablet()){
 						((MagicDoor) e).open((MagicTablet) item);
 						System.out.println("La tablette à ouvert la porte, vous y entrez.");
-						p.getMyPlace().getUnitList().remove( p );
-						p.getItemList().remove( item );
-						p.setMyPlace( dest );
-						dest.getUnitList().add( p );
+						src.getUnitList().remove( src.getPlayer() );
+						src.getPlayer().getItemList().remove( item );
+						dest.getUnitList().add( src.getPlayer() );
 					}else{
 						System.out.println("Il semble qu'un objet sois requis pour entrer dans cette pièce.");
 					}
 				} );
 			}else{
-				if(e.isState()){
+				if(!(e.isState())){
 					e.open();
-					System.out.println("La porte était fermée, vous l'ouvrez et entrez dans la pièce" + dest.getNAME() + ".");
-					p.getMyPlace().getUnitList().remove( p );
-					p.setMyPlace( dest );
-					dest.getUnitList().add( p );
+					System.out.println("La porte était fermée, vous l'ouvrez et entrez dans la pièce " + dest.getNAME() + ".");
+					src.getUnitList().remove( src.getPlayer() );
+					dest.getUnitList().add( src.getPlayer() );
 				}
 			}
 		}
@@ -109,11 +108,11 @@ public class Interaction {
 
 	}
 
-	public void take(Item i, Player p){
-		if(p.getMyPlace().isItemHere( i )){
-			System.out.println("Vous avez récupéré" + i.getId().getName());
-			p.getItemList().add( i );
-			p.getMyPlace().getItemList().remove( i );
+	public void take(Item i, Place src){
+		if(src.isItemHere( i )){
+			System.out.println("Vous avez récupéré " + i.getId().getName());
+			src.getPlayer().getItemList().add( i );
+			src.getItemList().remove( i );
 		}
 	}
 
@@ -121,41 +120,49 @@ public class Interaction {
 		System.exit( 0 );
 	}
 
-	public void use(Item i1, Item i2, Player p) {
+	public void use(Item i1, Item i2, Place src) {
 		if(i2 == null){
 			if(i1 instanceof Sedative){
-				p.restoreMH( (Sedative) i1 );
+				src.getPlayer().restoreMH( (Sedative) i1 );
 			}else if(i1 instanceof Food){
-				p.restoreH( (Food) i1 );
+				src.getPlayer().restoreH( (Food) i1 );
 			}else if (i1 instanceof Flashlight){
 				if(((Flashlight) i1).isActivate()){
 					((Flashlight) i1).turnOff();
+					System.out.println("Lampe torche éteinte");
 				}else {
 					((Flashlight) i1).turnOn();
+					System.out.println("Lampe torche Allumé");
 				}
 			}
-		}else if(  (p.getMyPlace().isItemHere( i1 ) || p.isItemHere( i1 )) &&  (p.getMyPlace().isItemHere( i2 ) || p.isItemHere( i2 )) ){
+		}else if(  (src.isItemHere( i1 ) || src.getPlayer().isItemHere( i1 )) &&  (src.isItemHere( i2 ) || src.getPlayer().isItemHere( i2 )) ){
 			if(i1 instanceof Flashlight && i2 instanceof Battery){
 				((Flashlight) i1).changeBattery( (Battery) i2 );
-				p.getItemList().remove( i2 );
+				src.getPlayer().getItemList().remove( i2 );
 			}else if(i1 instanceof Chest && i2 instanceof Key){
 				((Chest) i1).open( (Key) i2 );
-				p.getItemList().remove( i2 );
-				p.takeItem( (Chest) i1 );
+				src.getPlayer().getItemList().remove( i2 );
+				src.getPlayer().takeItem( (Chest) i1 );
 			}else if(i1 instanceof Lighter && i2 instanceof Battery){
 				((Lighter) i1).changeBattery( (Battery) i2 );
-				p.getItemList().remove( i2 );
+				src.getPlayer().getItemList().remove( i2 );
 			}else if(i1 instanceof ColtSAA45 && i2 instanceof SilverBullet){
 				((ColtSAA45) i1).reload( (SilverBullet) i2 );
-				p.getItemList().remove( (SilverBullet) i2 );
+				src.getPlayer().getItemList().remove( (SilverBullet) i2 );
 			}
 		}
 
 	}
 
-	public void gardener(Place dest, Player p) {
+	public void gardener(Place dest, Place src) {
 		System.out.println("Vous vous redirigez vers le jardinier.");
-		dest.getUnitList().add( p );
-		p.getMyPlace().getUnitList().remove( p );
+		go( dest, src );
 	}
+
+	public void inventaire(Place src){
+		src.getPlayer().getItemList().forEach( item -> {
+			item.print();
+		} );
+	}
+
 }

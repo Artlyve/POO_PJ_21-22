@@ -5,6 +5,7 @@ import Interface.Printable;
 import Item.Item;
 import Unity.Enemy.Enemy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Unit implements Attack, Printable {
@@ -12,7 +13,7 @@ public abstract class Unit implements Attack, Printable {
 
 	private final int MAX_HEALTH = 100;
 	private int Health;
-	private List<Item> ItemList;
+	private List<Item> ItemList = new ArrayList<Item>();
 	private int Wallet;
 	private boolean dead;
 
@@ -57,7 +58,7 @@ public abstract class Unit implements Attack, Printable {
 	}
 
 	@Override
-	public void AttackPlayer(Player p) {
+	public void attackPlayer(Player p) {
 
 	}
 }

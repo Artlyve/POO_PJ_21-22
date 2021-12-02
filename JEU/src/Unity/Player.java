@@ -17,7 +17,7 @@ public class Player extends Unit {
 	private final String NAME;
 	private int mentalHealth;
 	private boolean attacked;
-	private Place myPlace;
+/*	private Place myPlace;*/
 	private boolean itemHere;
 
 
@@ -26,7 +26,7 @@ public class Player extends Unit {
 		this.NAME = name;
 		this.attacked = false;
 		this.mentalHealth = super.getMAX_HEALTH();
-		this.myPlace = p;
+/*		this.myPlace = p;*/
 
 		super.setDead( false );
 		super.setHealth( super.getMAX_HEALTH() );
@@ -36,6 +36,14 @@ public class Player extends Unit {
 
 	@Override
 	public void print() {
+		System.out.println("Nom: " + getNAME());
+		System.out.println("Attaked" + isAttacked());
+		System.out.println("Vie:" + getHealth());
+		System.out.println("Mental: " + getMentalHealth());
+		System.out.println("Argent: " + getWallet());
+		getItemList().forEach( item -> {
+			item.print();
+		} );
 
 	}
 
@@ -97,6 +105,17 @@ public class Player extends Unit {
 		super.deleteItem( s );
 	}
 
+	public void painMH(int n){
+		if(this.mentalHealth - n <=0){
+			System.out.println("Vous êtes devenu fou, la maison à eu raison de vous. Par conséquence, le Démon vous a transformé en spectre");
+			this.setDead( true );
+			this.setMentalHealth( 0 );
+		}else{
+
+			setMentalHealth( this.mentalHealth - n );
+		}
+	}
+
 	public int getMentalHealth() {
 		return mentalHealth;
 	}
@@ -131,7 +150,7 @@ public class Player extends Unit {
 
 	//Manque méthode dead
 	@Override
-	public <T extends Enemy>void AttackEnemy(T e, Weapon w) {
+	public <T extends Enemy>void attackEnemy(T e, Weapon w) {
 		if(canAttak( e, w )){
 
 			if(e.getHealth()-w.getDamage() < 0){
@@ -145,11 +164,38 @@ public class Player extends Unit {
 		}
 	}
 
+	@Override
+	public void aleaAttak(Player p) {
+
+	}
+
+/*
 	public Place getMyPlace() {
-		return myPlace;
+		return this.myPlace;
 	}
 
 	public void setMyPlace(Place myPlace) {
 		this.myPlace = myPlace;
+	}*/
+
+	public String getNAME() {
+		return NAME;
+	}
+
+	public boolean isAttacked() {
+		return attacked;
+	}
+
+	public void setAttacked(boolean attacked) {
+		this.attacked = attacked;
+	}
+
+
+	public boolean isItemHere() {
+		return itemHere;
+	}
+
+	public void setItemHere(boolean itemHere) {
+		this.itemHere = itemHere;
 	}
 }

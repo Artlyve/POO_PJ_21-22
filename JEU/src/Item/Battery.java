@@ -7,8 +7,9 @@ public class Battery extends Item {
     private Flashlight flashlight = null;
     private Lighter lighter = null;
 
-    public Battery() {
-        super();
+
+    public Battery(Identity id) {
+        super.setId( id );
         this.level = DEFAULT_LEVEL;
     }
 

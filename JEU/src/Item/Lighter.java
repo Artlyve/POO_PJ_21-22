@@ -1,14 +1,18 @@
 package Item;
 
+import javax.print.attribute.standard.Fidelity;
+
 public class Lighter extends Item {
 
     private boolean isLight;
     private Battery battery;
 
-    public Lighter() {
-        super();
+
+
+    public Lighter(Identity id, Identity bat) {
         this.isLight = false;
-        this.battery = new Battery();
+        this.battery = new Battery( bat );
+        super.setId( id);
     }
 
     public boolean light() {

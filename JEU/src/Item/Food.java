@@ -9,7 +9,8 @@ public class Food extends Item{
 
 
 
-    public Food(){
+    public Food(Identity id){
+        super.setId( id );
         init();
     }
 

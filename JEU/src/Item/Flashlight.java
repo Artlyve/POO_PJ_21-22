@@ -8,9 +8,9 @@ public class Flashlight extends Item {
     private Battery battery;
     private boolean activate;
 
-    public Flashlight(Battery b) {
-        super();
+    public Flashlight(Battery b, Identity id) {
         this.battery = b;
+        super.setId( id );
     }
 
     public void freeBattery() {

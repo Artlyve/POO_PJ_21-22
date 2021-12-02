@@ -7,6 +7,7 @@ import t_enum.Rarity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Spectre extends Enemy {
 
@@ -29,15 +30,7 @@ public class Spectre extends Enemy {
 		super.setItemList( i );
 		super.setMyRarity( r );
 		super.setTalking( talk );
-		if(super.getMyRarity() == Rarity.common){
-			super.setCc_attack( 65 );
-		}else if(super.getMyRarity() == Rarity.unusual){
-			super.setCc_attack( 75 );
-		}else if(super.getMyRarity() == Rarity.epic){
-			super.setCc_attack( 85 );
-		}else if(super.getMyRarity() == Rarity.legendary){
-			super.setCc_attack( 100 );
-		}
+		super.setCc_attack( super.myCC( r ) );
 	}
 
 	@Override
@@ -50,7 +43,7 @@ public class Spectre extends Enemy {
 
 
 	@Override
-	public <T extends Enemy> void AttackEnemy(T e, Weapon w) {
+	public <T extends Enemy> void attackEnemy(T e, Weapon w) {
 
 	}
 
@@ -71,4 +64,6 @@ public class Spectre extends Enemy {
 	public String getNAME() {
 		return NAME;
 	}
+
+
 }

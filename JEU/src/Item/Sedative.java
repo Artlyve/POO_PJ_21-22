@@ -12,7 +12,8 @@ public class Sedative extends Item{
     private int healing;
 
 
-    public Sedative(){
+    public Sedative(Identity id){
+        super.setId( id );
         init();
     }
 
