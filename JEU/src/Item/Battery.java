@@ -12,6 +12,28 @@ public class Battery extends Item {
         this.level = DEFAULT_LEVEL;
     }
 
+    public boolean isEmpty() {
+        return this.level == 0;
+    }
+
+    Flashlight getFlashlight() {
+        return this.flashlight;
+    }
+
+    Lighter getLighter() {
+        return this.lighter;
+    }
+
+    public int getLevel() {
+        return this.level;
+    }
+
+    public void use() {
+        if (!this.isEmpty()) {
+            this.level--;
+        }
+    }
+
     /*public void freeFlashlight() {
         Flashlight oldFlashlight = this.flashlight;
         this.flashlight = null;
@@ -33,26 +55,4 @@ public class Battery extends Item {
             }
         }
     }*/
-
-    public void use() {
-        if (!this.isEmpty()) {
-            this.level--;
-        }
-    }
-
-    public boolean isEmpty() {
-        return this.level == 0;
-    }
-
-    Flashlight getFlashlight() {
-        return this.flashlight;
-    }
-
-    Lighter getLighter() {
-        return this.lighter;
-    }
-
-    public int getLevel() {
-        return this.level;
-    }
 }
