@@ -27,6 +27,7 @@ public class Gardener extends Npc {
 		super.setCc_attack(100);
 	}
 
+	//Affichage des items à vendre
 	public void exchange() {
 		if (this.isTalkative()) {
 			System.out.println("Voici quelques articles en ma possession : ");

@@ -1,16 +1,20 @@
 package Item;
 
-import static org.junit.After;
-import static org.junit.Before;
-import static org.junit.Test;
-import static org.junit.Assert.*;
+import Item.Weapons.Weapon;
+import Unity.Enemy.Enemy;
+import Unity.Player;
+import Unity.Unit;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class BatteryTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class BatteryTest extends Unit {
 
     private Battery battery1;
     private Identity id;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         battery1 = new Battery(id);
     }
@@ -44,5 +48,20 @@ public class BatteryTest {
         }
         assertEquals(battery1.getLevel(), 0);
         assertTrue(battery1.isEmpty());
+    }
+
+    @Override
+    public <T extends Enemy> void attackEnemy(T e, Weapon w) {
+
+    }
+
+    @Override
+    public void aleaAttak(Player p) {
+
+    }
+
+    @Override
+    public void print() {
+
     }
 }

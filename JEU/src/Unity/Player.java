@@ -34,6 +34,7 @@ public class Player extends Unit {
 		super.setItemList( i );
 	}
 
+
 	@Override
 	public void print() {
 		System.out.println("Nom: " + getNAME());
@@ -47,6 +48,8 @@ public class Player extends Unit {
 
 	}
 
+
+	/*Récupération d'items d'un coffre*/
 	public void takeItem(Chest c){
 		if(c.isState()){
 			System.out.println("Vous avez récupéré :");
@@ -58,18 +61,22 @@ public class Player extends Unit {
 		}
 	}
 
-	public void gardenerExchange(Gardener g) {
+	/*Echange un item avec le jardinier*/
+	public void gardenerExchange(Gardener g, Item i) {
 		if (g.isTalkative()) {
 			g.getItemList().forEach(item -> {
-				System.out.println("\t-" + item.getId().getName());
-				this.getItemList().add( item );
-				g.getItemList().remove( item );
-				int wallet = -item.getId().getValue();
-				super.setWallet(wallet);
+				if(i == item){
+					System.out.println("\t-" + item.getId().getName());
+					this.getItemList().add( item );
+					g.getItemList().remove( item );
+					int wallet =- item.getId().getValue();
+					super.setWallet(wallet);
+				}
 			});
 		}
 	}
 
+	/*SAvoir si le joueur à bien un objet en quesiton*/
 	public boolean isItemHere(Item i){
 		System.out.println(" Inventaire : \n");
 		if(!this.itemHere) {
@@ -105,6 +112,8 @@ public class Player extends Unit {
 		super.deleteItem( s );
 	}
 
+
+	/*Retire de la santé mental*/
 	public void painMH(int n){
 		if(this.mentalHealth - n <=0){
 			System.out.println("Vous êtes devenu fou, la maison à eu raison de vous. Par conséquence, le Démon vous a transformé en spectre");
@@ -124,6 +133,7 @@ public class Player extends Unit {
 		this.mentalHealth = mentalHealth;
 	}
 
+	/* Cherche à savoir si le player peut ou pas attaquer un ennemi avec son arme */
 	public boolean canAttak(Enemy e, Weapon w){
 		if(e.getMyRarity() == Rarity.common && w.getMyRarity() == Rarity.common){
 			this.attacked = true;
@@ -148,7 +158,7 @@ public class Player extends Unit {
 		return this.attacked;
 	}
 
-	//Manque méthode dead
+
 	@Override
 	public <T extends Enemy>void attackEnemy(T e, Weapon w) {
 		if(canAttak( e, w )){

@@ -9,8 +9,7 @@ public class Main {
     public static void main(String...args){
         Interaction myInteraction = new Interaction();
         Game myGame = new Game(myInteraction);
-        Spectre t = (Spectre) myGame.searchEnemy( "Mirielle" );;
-        System.out.println(t.getNAME());
+        myGame.launchGame();
 
 
     }

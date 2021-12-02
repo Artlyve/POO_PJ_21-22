@@ -1,40 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="JEU:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f56a09-7eb7-44e2-af9b-ba8efbbe2d8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Game/AleaTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Unit/PlayerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Unit/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JEU.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JEU.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JEU/Game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JEU/Game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JEU/Game/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JEU/Game/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JEU/Unity/NPC/Gardener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JEU/Unity/NPC/Gardener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JEU/Unity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JEU/Unity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JEU/Unity/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JEU/Unity/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/JEU/Item/BatteryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/JEU/Item/FlashlightTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/AleaTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/AleaTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game/Interaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Interaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface/Attack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Attack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/Talk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/Talk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Battery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Battery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Candle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Candle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Chest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Chest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Flashlight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Flashlight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Lighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Lighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/MagicTablet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/MagicTablet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/MagicTabletFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/MagicTabletFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item/Sedative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/Sedative.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Place/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Devil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Devil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unity/Enemy/Spectre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Enemy/Spectre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Unit/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item/BatteryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Gardener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Unity/NPC/Npc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/NPC/Npc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Unity/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Unity/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Item/BatteryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Item/BatteryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Item/FlashlightTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Item/FlashlightTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Item/BatteryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Item/FlashlightTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Unit/PlayerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -74,13 +69,13 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="Unity.Unit" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/test" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TPs_BIS/TP3_BIS_POO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../TP3" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -92,11 +87,13 @@
       <recent name="C:\Users\BF3TE\OneDrive\Bureau\L3\POO\POO_PROJET\JEU\test\Item" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Item" />
+      <recent name="Unity.NPC" />
       <recent name="Unity" />
       <recent name="Unit" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Game.Main" />
       <module name="JEU" />
@@ -110,9 +107,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BatteryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JEU" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Item" />
+      <option name="MAIN_CLASS_NAME" value="Item.BatteryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.BatteryTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BatteryTest" />
       </list>
     </recent_temporary>
   </component>

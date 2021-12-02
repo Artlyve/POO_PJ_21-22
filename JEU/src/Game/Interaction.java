@@ -26,7 +26,7 @@ import java.util.List;
 
 public class Interaction {
 
-
+	/************************************************	ACTIONS POSSIBLE POUR JOUER	*************************************************/
 	public void go(Place dest, Place src) {
 
 		if(src.isNeighbor(dest)){

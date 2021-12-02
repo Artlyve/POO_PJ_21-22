@@ -17,6 +17,8 @@ public abstract class Unit implements Attack, Printable {
 	private int Wallet;
 	private boolean dead;
 
+
+    /*Suppression d'un item dans notre liste*/
 	public <T extends Item> void deleteItem(T e){
 		ItemList.remove( e );
 	}

@@ -16,7 +16,7 @@ public class AleaTask extends TimerTask {
     }
 
 
-
+    //Evenemnt qui devait s'effectuer toute les minutes dans le jeu
     @Override
     public void run() {
         if(place.isPlayerHere() && place.getLvlObscurity() <= 0){

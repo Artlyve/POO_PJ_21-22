@@ -28,7 +28,7 @@ public class Game {
 		this.myInteraction = interactions;
 	}
 
-
+/************************************************	initialistaion des elements du jeux	*************************************************/
 	/******************************	KEYS	*********************************/
 	private final Key  keyVS = new Key("Clé pour se rendre à l'escalier", 0);
 	private final Key  keyC2C1 = new Key("Clé pour se rendre au Couloir 1", 1);
@@ -238,9 +238,12 @@ public class Game {
 			,initExitList( exitsListCouloir1, c2c1, c1b1, c1ch1, c1cui, c1sm ), "", 0
 	);
 
+/************************************************	FIN initialistaion des elements du jeux	*************************************************/
 
 
-	/******************************	Game	*********************************/
+
+
+/******************************	Game	*********************************/
 
 
 	public void synopsis(){
@@ -248,6 +251,7 @@ public class Game {
 				"\tEn menant une petite enquête, Arthur déniche le point commun entre les meurtres, c’est le cerveau, les cadavres n’en ont plus, comme s’il avait été aspirer. \n\tArthur se souvenait d’une histoire qu’il avait entendu, il comprit qu’il avait à faire à un Spectre démoniaque . Le Spectre aime manger le cerveau de leur proie et jouer avec elle. \n" +
 				"\tEn recherchant les lieux où les cadavres avaient été découverts, Arthur se rendit compte qu’ils étaient tous concentrés autour d’un château à une distance d’environ 1 km. \n\tSa chasse commença quand il arriva au Château de Montmorency\n");
 	}
+
 
 
 	public void choicePlayer(){
@@ -259,8 +263,6 @@ public class Game {
 		while (!phrase.equals("")) {
 			phrase = scan.nextLine();
 			words = phrase.split("\\s+");;
-
-
 
 				switch (words[0]){
 					case "g":
@@ -297,8 +299,6 @@ public class Game {
 
 		}
 		scan.close();
-
-
 	}
 
 
@@ -323,6 +323,8 @@ public class Game {
 	/******************************	Méthodes annexe	*********************************/
 
 
+
+	/////////////////////METHODE DE RECHERCHE
 	public Enemy searchEnemy(String s){
 		AtomicReference<Enemy> p = new AtomicReference<Enemy>();
 		searchPlaceWherePlayer().getUnitList().forEach( unit -> {
@@ -376,6 +378,9 @@ public class Game {
 		return p.get();
 	}
 
+
+	///////////////////METHODE D'INITIALISATION
+
 	public void initPlaceList(List<Place> listPlaces,Place...places){
 		Collections.addAll( listPlaces, places );
 	}
@@ -406,6 +411,8 @@ public class Game {
 		}
 		return b;
 	}
+
+	/////////////////////////GETER SETER
 
 	public List<Place> getPlaceList() {
 		return placeList;
